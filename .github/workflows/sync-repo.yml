@@ -1,4 +1,4 @@
-name: sync fm1223-scripts
+name: sync kkcao-scripts
 on:
   workflow_dispatch:
   schedule:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync fm1223-scripts
+      - name: sync fkkcao-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/fm1223/jd-scripts.git"
+          source_repo: "https://github.com/kkcao3/jd.git"
           source_branch: "master"
           destination_branch: "master"
           github_token: ${{ secrets.PAT }}
