@@ -1,5 +1,7 @@
 ## 请勿使用github action、滥用github资源会封我仓库以及账号，[详见](https://github.com/LXK9301/jd_scripts/issues/3)
 
+## 这不是原作者库，原库[传送门](https://github.com/LXK9301/jd_scripts)
+
 ## 特别声明: 
 
 * 本仓库发布的Script项目中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断.
@@ -144,3 +146,69 @@
 * [@uniqueque](https://github.com/uniqueque)
 
 * [@nzw9314](https://github.com/nzw9314)
+
+
+## 环境变量说明
+
+    
+#### 京东Cookie
+
+  - Secret新增`JD_COOKIE`，填入cookie信息，多账号的cookie， 使用`&`或者换行隔开(两种方法)
+  
+  - 方式已一：`&`号隔开示例(注:后面的英文引号`;`不可缺失)
+    如 `账号一cookie&账号二cookie&账号三cookie`，再多账号就依次类推即可
+    ```
+    pt_key=xxx1;pt_pin=xxx1;&pt_key=xxx2;pt_pin=xxx2;&pt_key=xxx3;pt_pin=xxx3;
+    ```
+  - 方式二：按`Enter`键换行隔开示例(这里给下三个账号的示例)
+    ```
+    pt_key=bbbbbbbbbbbbbb;pt_pin=aaaaaaa;
+    pt_key=cccccccc;pt_pin=dddddddd;
+    pt_key=eeeeeeeee;pt_pin=ffffffff;
+    
+    
+#### 自动同步Fork后的代码
+
+  > 此部分内容由tg@wukongdada和tg@goukey提供
+
+  - 方案A - 强制远程分支覆盖自己的分支(**新手推荐使用**)
+  
+      1. 参考tg@wukongdada这篇教程 [保持自己github的forks自动和上游仓库同步的教程](https://github.com/lxk0301/jd_scripts/blob/master/backUp/gitSync.md) ， 安装[pull插件](https://github.com/apps/pull) 并确认此项目已在pull插件的作用下（参考@twukongdada这篇教程文中1-d）
+      
+      2. 确保.github/pull.yml文件正常存在，yml内上游作者填写正确(此项目已填好，无需更改)。
+      
+      3. 确保pull.yml里面是`mergeMethod: hardreset`(默认就是`hardreset`)。
+      
+      4. ENJOY!上游更改三小时左右就会自动发起同步。
+    ```
+    # 方案A可参考这里
+    version: "1"
+    rules:                      # Array of rules
+      - base: master            # Required. Target branch
+        upstream: lxk0301:master    # Required. Must be in the same fork network.
+        mergeMethod: hardreset  # Optional, one of [none, merge, squash, rebase, hardreset], Default: none.
+        mergeUnstable: true    # Optional, merge pull request even when the mergeable_state is not clean. Default: false
+    ```
+  - 方案B - 保留自己仓库已修改过的文件(**需修改脚本或者提PR的使用**)
+    
+    > 上游变动后pull插件会自动发起pr，但如果有冲突需要自行**手动**确认。
+    > 如果上游更新涉及workflow里的文件内容改动，需要自行**手动**确认。
+    
+    1. 参考tg@wukongdada这篇教程 [保持自己github的forks自动和上游仓库同步的教程](https://github.com/lxk0301/jd_scripts/blob/master/backUp/gitSync.md) ， 安装[pull插件](https://github.com/apps/pull) 并确认此项目已在pull插件的作用下（参考@twukongdada这篇教程文中1-d）
+    2. 确保.github/pull.yml文件正常存在，yml内上游作者填写正确(此项目已填好，无需更改)。
+    3. 将pull.yml里面的`mergeMethod: hardreset`修改为`mergeMethod: merge`保存。
+    4. ENJOY!上游更改三小时左右就会自动发起同步。
+    ```
+    # 方案B可参考这里
+    version: "1"
+    rules:                      # Array of rules
+      - base: master            # Required. Target branch
+        upstream: lxk0301:master    # Required. Must be in the same fork network.
+        mergeMethod: merge  # Optional, one of [none, merge, squash, rebase, hardreset], Default: none.
+        mergeUnstable: true    # Optional, merge pull request even when the mergeable_state is not clean. Default: false
+    ```
+  - 方案C - 利用github-action定时cron更新同步(**新手推荐使用**)
+  
+    > 效果和方案A一样（即：强制更新覆盖）
+    
+    新建secret，`Name`为`PAT`，填写的`Value`值需要去申请Personal access tokens，申请教程[看此处](https://www.jianshu.com/p/bb82b3ad1d11) 记得勾选`repo`权限就行
