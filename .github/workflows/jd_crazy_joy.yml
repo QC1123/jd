@@ -52,3 +52,4 @@ jobs:
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           JDJOY_HELPSELF: ${{ secrets.JDJOY_HELPSELF }} #疯狂的joy循环助力，true表示循环助力,false表示不循环助力，默认不开启循环助力。
           JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }} #疯狂的joy京豆兑换，目前最小值为500/1000京豆，默认不开启京豆兑换。
+          JDJOY_SHARECODES: ${{ secrets.JDJOY_SHARECODES }}
