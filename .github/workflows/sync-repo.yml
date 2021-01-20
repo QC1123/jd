@@ -1,4 +1,4 @@
-name: sync kkcao-scripts
+name: 同步脚本【需要PAT】
 on:
   workflow_dispatch:
   schedule:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync fkkcao-scripts
+      - name: sync kkcao-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/kkcao3/jd.git"
+          source_repo: "https://github.com/kkcao/jd.git"
           source_branch: "master"
           destination_branch: "master"
           github_token: ${{ secrets.PAT }}
