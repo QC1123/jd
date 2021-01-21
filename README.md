@@ -216,5 +216,5 @@
     JXNC Token secrets
     
     JXNCTOKENS 按这个格式添加到secrets {"farm_jstoken":"6c8ad7acc1a3287c20bead04cabd75d6","timestamp":"1610421806073","phoneid":"8e88fe945171746afe0607288e867fbcec7f46af"}
-Chris
-手机上抓个抓包软件 iphone可以用Stream ，安卓可以用Charles 或者别的, 开始抓包之后进app做一个任务， 之后找到抓包的字段，比如我的是 https://wq.jd.com/cubeactive/farm/dotask?active=jdnc_1_chelizi210108_2&joinnum=1&tasklevel=6&answer=1%3AD%3A0&ch=7&farm_jstoken=6c8ad7acc1a3287c20bead04cabd75d6&timestamp=1610421806073&phoneid=8e88fe945171746afe0607288e867fbcec7f46af&_=1610421806077&sceneval=2&g_login_type=1&callback=jsonpCBKH&g_ty=ls
+
+    手机上抓个抓包软件 iphone可以用Stream ，安卓可以用Charles 或者别的, 开始抓包之后进app做一个任务， 之后找到抓包的字段，比如我的是 https://wq.jd.com/cubeactive/farm/dotask?active=jdnc_1_chelizi210108_2&joinnum=1&tasklevel=6&answer=1%3AD%3A0&ch=7&farm_jstoken=6c8ad7acc1a3287c20bead04cabd75d6&timestamp=1610421806073&phoneid=8e88fe945171746afe0607288e867fbcec7f46af&_=1610421806077&sceneval=2&g_login_type=1&callback=jsonpCBKH&g_ty=ls
