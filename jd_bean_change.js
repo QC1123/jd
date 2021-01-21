@@ -6,9 +6,9 @@
  */
 /*
 京豆变动通知脚本：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_bean_change.js
-统计昨日京豆的变化情况，包括收入，支出，以及显示当前京豆数量,目前小问题:下单使用京豆后,退款重新购买会出现异常
+统计昨日京豆的变化情况，包括收入，支出，以及显示当前京豆数量,目前小问???:下单使用京豆???,退款重新购买会出现异常
 网页查看地址 : https://bean.m.jd.com/bean/signIndex.actionbeanDetail/index.action?resourceValue=bean
-支持京东双账号
+支持京东双账???
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 ============QuantumultX==============
 [task_local]
@@ -21,7 +21,7 @@ cron "2 9 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_script
 [Script]
 京豆变动通知 = type=cron,cronexp=2 9 * * *,wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_bean_change.js
 
-============小火箭=========
+============小火???=========
 京豆变动通知 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_bean_change.js, cronexpr="2 9 * * *", timeout=3600, enable=true
  */
 const $ = new Env('京豆变动通知');
@@ -47,7 +47,7 @@ if ($.isNode()) {
 }
 !(async () => {
   if (!cookiesArr[0]) {
-    $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+    $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获???', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -63,12 +63,12 @@ if ($.isNode()) {
       $.nickName = '';
       $.message = '';
       await TotalBean();
-      console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
+      console.log(`\n开始【京东账???${$.index}???${$.nickName || $.UserName}\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
 
         if ($.isNode()) {
-          await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+          await notify.sendNotify(`${$.name}cookie已失??? - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
         }
         continue
       }
@@ -78,7 +78,7 @@ if ($.isNode()) {
   }
 })()
     .catch((e) => {
-      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+      $.log('', `??? ${$.name}, 失败! 原因: ${e}!`, '')
     })
     .finally(() => {
       $.done();
@@ -86,23 +86,23 @@ if ($.isNode()) {
 async function showMsg() {
   if ($.errorMsg) return
   if ($.isNode()) {
-    await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `账号${$.index}：${$.nickName || $.UserName}\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}京豆 🐶${$.message}`, { url: `https://bean.m.jd.com/bean/signIndex.actionbeanDetail/index.action?resourceValue=bean` })
+    await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `账号${$.index}???${$.nickName || $.UserName}\n昨日收入???${$.incomeBean}京豆 🐶\n昨日支出???${$.expenseBean}京豆 🐶\n当前京豆???${$.beanCount}京豆 🐶${$.message}`, { url: `https://bean.m.jd.com/bean/signIndex.actionbeanDetail/index.action?resourceValue=bean` })
   }
-  $.msg($.name, '', `账号${$.index}：${$.nickName || $.UserName}\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}京豆 🐶${$.message}`, {"open-url": "https://bean.m.jd.com/bean/signIndex.actionbeanDetail/index.action?resourceValue=bean"});
+  $.msg($.name, '', `账号${$.index}???${$.nickName || $.UserName}\n昨日收入???${$.incomeBean}京豆 🐶\n昨日支出???${$.expenseBean}京豆 🐶\n当前京豆???${$.beanCount}京豆 🐶${$.message}`, {"open-url": "https://bean.m.jd.com/bean/signIndex.actionbeanDetail/index.action?resourceValue=bean"});
 }
 async function bean() {
-  // console.log(`北京时间零点时间戳:${parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000}`);
+  // console.log(`北京时间零点时间???:${parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000}`);
   // console.log(`北京时间2020-10-28 06:16:05::${new Date("2020/10/28 06:16:05+08:00").getTime()}`)
-  // 不管哪个时区。得到都是当前时刻北京时间的时间戳 new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000
+  // 不管哪个时区。得到都是当前时刻北京时间的时间??? new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000
 
-  //前一天的0:0:0时间戳
+  //前一天的0:0:0时间???
   const tm = parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000 - (24 * 60 * 60 * 1000);
-  // 今天0:0:0时间戳
+  // 今天0:0:0时间???
   const tm1 = parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000;
   let page = 1, t = 0, yesterdayArr = [];
   do {
     let response = await getJingBeanBalanceDetail(page);
-    console.log(`第${page}页: ${JSON.stringify(response)}`);
+    console.log(`???${page}???: ${JSON.stringify(response)}`);
     if (response && response.code === "0") {
       page++;
       let detailList = response.detailList;
@@ -110,17 +110,17 @@ async function bean() {
         for (let item of detailList) {
           const date = item.date.replace(/-/g, '/') + "+08:00";
           if (tm <= new Date(date).getTime() && new Date(date).getTime() < tm1) {
-            //昨日的
+            //昨日???
             yesterdayArr.push(item);
           } else if (tm > new Date(date).getTime()) {
-            //前天的
+            //前天???
             t = 1;
             break;
           }
         }
       } else {
         $.errorMsg = `数据异常`;
-        $.msg($.name, ``, `账号${$.index}：${$.nickName}\n${$.errorMsg}`);
+        $.msg($.name, ``, `账号${$.index}???${$.nickName}\n${$.errorMsg}`);
         t = 1;
       }
     }
@@ -133,8 +133,8 @@ async function bean() {
     }
   }
   await queryexpirejingdou();
-  // console.log(`昨日收入：${$.incomeBean}个京豆 🐶`);
-  // console.log(`昨日支出：${$.expenseBean}个京豆 🐶`)
+  // console.log(`昨日收入???${$.incomeBean}个京??? 🐶`);
+  // console.log(`昨日支出???${$.expenseBean}个京??? 🐶`)
 }
 function TotalBean() {
   return new Promise(async resolve => {

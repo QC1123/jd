@@ -5,9 +5,9 @@
  * @Last Modified time: 2021-1-9 21:22:37
  */
 /*
-东东超市(活动入口：京东APP-》首页-》京东超市-》底部东东超市)
+东东超市(活动入口：京东APP-》首???-》京东超???-》底部东东超???)
 Some Functions Modified From https://github.com/Zero-S1/JD_tools/blob/master/JD_superMarket.py
-支持京东双账号
+支持京东双账???
 东东超市兑换奖品请使用此脚本 https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_blueCoin.js
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 =================QuantumultX==============
@@ -19,7 +19,7 @@ Some Functions Modified From https://github.com/Zero-S1/JD_tools/blob/master/JD_
 cron "11 1-23/5 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_superMarket.js,tag=东东超市
 =======Surge===========
 东东超市 = type=cron,cronexp="11 1-23/5 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_superMarket.js
-==============小火箭=============
+==============小火???=============
 东东超市 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_superMarket.js, cronexpr="11 1-23/5 * * *", timeout=3600, enable=true
  */
 const $ = new Env('东东超市');
@@ -27,16 +27,16 @@ const $ = new Env('东东超市');
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', jdSuperMarketShareArr = [], notify, newShareCodes;
 
-let jdNotify = true;//用来是否关闭弹窗通知，true表示关闭，false表示开启。
-let superMarketUpgrade = true;//自动升级,顺序:解锁升级商品、升级货架,true表示自动升级,false表示关闭自动升级
-let businessCircleJump = true;//小于对方300热力值自动更换商圈队伍,true表示运行,false表示禁止
-let drawLotteryFlag = false;//是否用500蓝币去抽奖，true表示开启，false表示关闭。默认关闭
+let jdNotify = true;//用来是否关闭弹窗通知，true表示关闭，false表示开启???
+let superMarketUpgrade = true;//自动升级,顺序:解锁升级商品、升级货???,true表示自动升级,false表示关闭自动升级
+let businessCircleJump = true;//小于对方300热力值自动更换商圈队???,true表示运行,false表示禁止
+let drawLotteryFlag = false;//是否???500蓝币去抽奖，true表示开启，false表示关闭。默认关???
 let message = '', subTitle;
 const JD_API_HOST = 'https://api.m.jd.com/api';
 
-//助力好友分享码
-//此此内容是IOS用户下载脚本到本地使用，填写互助码的地方，同一京东账号的好友互助码请使用@符号隔开。
-//下面给出两个账号的填写示例（iOS只支持2个京东账号）
+//助力好友分享???
+//此此内容是IOS用户下载脚本到本地使用，填写互助码的地方，同一京东账号的好友互助码请使用@符号隔开???
+//下面给出两个账号的填写示例（iOS只支???2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
   //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
   '-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaejjYv4g8T2EwnsVhQ',
@@ -47,7 +47,7 @@ let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好�
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
-    $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+    $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获???', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
   }
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -60,12 +60,12 @@ let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好�
       $.isLogin = true;
       $.nickName = '';
       await TotalBean();
-      console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
+      console.log(`\n开始【京东账???${$.index}???${$.nickName || $.UserName}\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
 
         if ($.isNode()) {
-          await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+          await notify.sendNotify(`${$.name}cookie已失??? - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
         }
         continue
       }
@@ -79,15 +79,15 @@ let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好�
   }
 })()
     .catch((e) => {
-      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+      $.log('', `??? ${$.name}, 失败! 原因: ${e}!`, '')
     })
     .finally(() => {
       $.done();
     })
 async function jdSuperMarket() {
-  // await receiveGoldCoin();//收金币
+  // await receiveGoldCoin();//收金???
   await businessCircleActivity();//商圈活动
-  await receiveBlueCoin();//收蓝币（小费）
+  await receiveBlueCoin();//收蓝币（小费???
   // await receiveLimitProductBlueCoin();//收限时商品的蓝币
   await daySign();//每日签到
   await BeanSign()//
@@ -96,7 +96,7 @@ async function jdSuperMarket() {
   //await smtgQueryPkTask();//做商品PK任务
   await drawLottery();//抽奖功能(招财进宝)
   // await myProductList();//货架
-  // await upgrade();//升级货架和商品
+  // await upgrade();//升级货架和商???
   // await manageProduct();
   // await limitTimeProduct();
   await smtg_shopIndex();
@@ -105,15 +105,15 @@ async function jdSuperMarket() {
   await Home();
 }
 function showMsg() {
-  $.log(`【京东账号${$.index}】${$.nickName}\n${message}`);
+  $.log(`【京东账???${$.index}???${$.nickName}\n${message}`);
   jdNotify = $.getdata('jdSuperMarketNotify') ? $.getdata('jdSuperMarketNotify') : jdNotify;
   if (!jdNotify || jdNotify === 'false') {
-    $.msg($.name, subTitle ,`【京东账号${$.index}】${$.nickName}\n${message}`);
+    $.msg($.name, subTitle ,`【京东账???${$.index}???${$.nickName}\n${message}`);
   }
 }
 //抽奖功能(招财进宝)
 async function drawLottery() {
-  console.log(`\n注意⚠:东东超市抽奖已改版,花费500蓝币抽奖一次,现在脚本默认已关闭抽奖功能\n`);
+  console.log(`\n注意???:东东超市抽奖已改???,花费500蓝币抽奖一???,现在脚本默认已关闭抽奖功能\n`);
   drawLotteryFlag = $.getdata('jdSuperMarketLottery') ? $.getdata('jdSuperMarketLottery') : drawLotteryFlag;
   if ($.isNode() && process.env.SUPERMARKET_LOTTERY) {
     drawLotteryFlag = process.env.SUPERMARKET_LOTTERY;
@@ -150,24 +150,24 @@ async function doDailyTask() {
     const taskList = smtgQueryShopTaskRes.data.result.taskList;
     console.log(`\n日常赚钱任务       完成状态`)
     for (let item of taskList) {
-      console.log(` ${item['title'].length < 4 ? item['title']+`\xa0` : item['title'].slice(-4)}         ${item['finishNum'] === item['targetNum'] ? '已完成':'未完成'} ${item['finishNum']}/${item['targetNum']}`)
+      console.log(` ${item['title'].length < 4 ? item['title']+`\xa0` : item['title'].slice(-4)}         ${item['finishNum'] === item['targetNum'] ? '已完???':'未完???'} ${item['finishNum']}/${item['targetNum']}`)
     }
     for (let item of taskList) {
       //领奖
       if (item.taskStatus === 1 && item.prizeStatus === 1) {
         const res = await smtgObtainShopTaskPrize(item.taskId);
-        console.log(`\n领取做完任务的奖励${JSON.stringify(res)}\n`)
+        console.log(`\n领取做完任务的奖???${JSON.stringify(res)}\n`)
       }
-      //做任务
+      //做任???
       if ((item.type === 1 || item.type === 11) && item.taskStatus === 0) {
         // 分享任务
         const res = await smtgDoShopTask(item.taskId);
         console.log(`${item.subTitle}结果${JSON.stringify(res)}`)
       }
       if (item.type === 2) {
-        //逛会场
+        //逛会???
         if (item.taskStatus === 0) {
-          console.log('开始逛会场')
+          console.log('开始逛会???')
           const itemId = item.content[item.type].itemId;
           const res = await smtgDoShopTask(item.taskId, itemId);
           console.log(`${item.subTitle}结果${JSON.stringify(res)}`);
@@ -176,7 +176,7 @@ async function doDailyTask() {
       if (item.type === 8) {
         //关注店铺
         if (item.taskStatus === 0) {
-          console.log('开始关注店铺')
+          console.log('开始关注店???')
           const itemId = item.content[item.type].itemId;
           const res = await smtgDoShopTask(item.taskId, itemId);
           console.log(`${item.subTitle}结果${JSON.stringify(res)}`);
@@ -194,7 +194,7 @@ async function doDailyTask() {
       if (item.type === 10) {
         //关注店铺
         if (item.taskStatus === 0) {
-          console.log('开始关注店铺')
+          console.log('开始关注店???')
           const itemId = item.content[item.type].itemId;
           const res = await smtgDoShopTask(item.taskId, itemId);
           console.log(`${item.subTitle}结果${JSON.stringify(res)}`);
@@ -211,7 +211,7 @@ async function receiveGoldCoin() {
   $.goldCoinData = await smtgReceiveCoin({ "type": 0 });
   if ($.goldCoinData.data.bizCode === 0) {
     console.log(`领取金币成功${$.goldCoinData.data.result.receivedGold}`)
-    message += `【领取金币】${$.goldCoinData.data.result.receivedGold}个\n`;
+    message += `【领取金币???${$.goldCoinData.data.result.receivedGold}个\n`;
   } else {
     console.log(`${$.goldCoinData.data.bizMsg}`);
   }
@@ -222,10 +222,10 @@ async function receiveLimitProductBlueCoin() {
   const res = await smtgReceiveCoin({ "type": 1 });
   console.log(`\n限时商品领蓝币结果：[${res.data.bizMsg}]\n`);
   if (res.data.bizCode === 0) {
-    message += `【限时商品】获得${res.data.result.receivedBlue}个蓝币\n`;
+    message += `【限时商品】获???${res.data.result.receivedBlue}个蓝币\n`;
   }
 }
-//领蓝币
+//领蓝???
 function receiveBlueCoin(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
@@ -239,16 +239,16 @@ function receiveBlueCoin(timeout = 0) {
             $.data = data;
             if ($.data.data.bizCode !== 0 && $.data.data.bizCode !== 809) {
               $.coinerr = `${$.data.data.bizMsg}`;
-              message += `【收取小费】${$.data.data.bizMsg}\n`;
-              console.log(`收取蓝币失败：${$.data.data.bizMsg}`)
+              message += `【收取小费???${$.data.data.bizMsg}\n`;
+              console.log(`收取蓝币失败???${$.data.data.bizMsg}`)
               return
             }
             if  ($.data.data.bizCode === 0) {
               $.coincount += $.data.data.result.receivedBlue;
               $.blueCionTimes ++;
-              console.log(`【京东账号${$.index}】${$.nickName} 第${$.blueCionTimes}次领蓝币成功，获得${$.data.data.result.receivedBlue}个\n`)
+              console.log(`【京东账???${$.index}???${$.nickName} ???${$.blueCionTimes}次领蓝币成功，获???${$.data.data.result.receivedBlue}个\n`)
               if (!$.data.data.result.isNextReceived) {
-                message += `【收取小费】${$.coincount}个\n`;
+                message += `【收取小费???${$.coincount}个\n`;
                 return
               }
             }
@@ -274,14 +274,14 @@ async function daySign() {
     if (signDataRes.code === 0 && signDataRes.data.success) {
       message += `【第${$.todayDay}日签到】成功，奖励${signDataRes.data.result.rewardBlue}蓝币\n`
     } else {
-      message += `【第${$.todayDay}日签到】${signDataRes.data.bizMsg}\n`
+      message += `【第${$.todayDay}日签到???${signDataRes.data.bizMsg}\n`
     }
   }
 }
 async function BeanSign() {
   const beanSignRes = await smtgSign({"channel": "1"});
   if (beanSignRes && beanSignRes.data['bizCode'] === 0) {
-    console.log(`每天从指定入口进入游戏,可获得额外奖励:${JSON.stringify(beanSignRes)}`)
+    console.log(`每天从指定入口进入游???,可获得额外奖???:${JSON.stringify(beanSignRes)}`)
   }
 }
 //每日签到
@@ -358,7 +358,7 @@ async function businessCircleActivity() {
           console.log(`加入战队其他未知情况:${JSON.stringify(res)}`)
         }
       } else {
-        console.log('\nupdatePkActivityId请求返回的pkActivityId与京东服务器返回不一致,暂时不加入战队')
+        console.log('\nupdatePkActivityId请求返回的pkActivityId与京东服务器返回不一???,暂时不加入战???')
       }
     } else if (joinStatus === 1) {
       if (teamId) {
@@ -366,25 +366,25 @@ async function businessCircleActivity() {
         console.log(`PK队伍teamId: [${teamId}]`);
         console.log(`PK队伍名称: [${currentUserPkInfo && currentUserPkInfo.teamName}]`);
         console.log(`我邀请的人数:${inviteCount}\n`)
-        console.log(`\n我方战队战队 [${currentUserPkInfo && currentUserPkInfo.teamName}]/【${currentUserPkInfo && currentUserPkInfo.teamCount}】`);
-        console.log(`对方战队战队 [${pkUserPkInfo && pkUserPkInfo.teamName}]/【${pkUserPkInfo && pkUserPkInfo.teamCount}】\n`);
+        console.log(`\n我方战队战队 [${currentUserPkInfo && currentUserPkInfo.teamName}]/???${currentUserPkInfo && currentUserPkInfo.teamCount}】`);
+        console.log(`对方战队战队 [${pkUserPkInfo && pkUserPkInfo.teamName}]/???${pkUserPkInfo && pkUserPkInfo.teamCount}】\n`);
       }
     }
     if (pkStatus === 1) {
       console.log(`商圈PK进行中\n`)
       if (!teamId) {
         const receivedPkTeamPrize = await smtg_receivedPkTeamPrize();
-        console.log(`商圈PK奖励领取结果：${JSON.stringify(receivedPkTeamPrize)}\n`)
+        console.log(`商圈PK奖励领取结果???${JSON.stringify(receivedPkTeamPrize)}\n`)
         if (receivedPkTeamPrize.data.bizCode === 0) {
           if (receivedPkTeamPrize.data.result.pkResult === 1) {
             const { pkTeamPrizeInfoVO } = receivedPkTeamPrize.data.result;
-            message += `【商圈PK奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
+            message += `【商圈PK奖励???${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
             if ($.isNode()) {
-              await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈队伍】PK获胜\n【奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
+              await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账???${$.index}??? ${$.nickName}\n【商圈队伍】PK获胜\n【奖励???${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
             }
           } else if (receivedPkTeamPrize.data.result.pkResult === 2) {
             if ($.isNode()) {
-              await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈队伍】PK失败`)
+              await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账???${$.index}??? ${$.nickName}\n【商圈队伍】PK失败`)
             }
           }
         }
@@ -394,17 +394,17 @@ async function businessCircleActivity() {
       if (prizeInfo.pkPrizeStatus === 2) {
         console.log(`开始领取商圈PK奖励`);
         // const receivedPkTeamPrize = await smtg_receivedPkTeamPrize();
-        // console.log(`商圈PK奖励领取结果：${JSON.stringify(receivedPkTeamPrize)}`)
+        // console.log(`商圈PK奖励领取结果???${JSON.stringify(receivedPkTeamPrize)}`)
         // if (receivedPkTeamPrize.data.bizCode === 0) {
         //   if (receivedPkTeamPrize.data.result.pkResult === 1) {
         //     const { pkTeamPrizeInfoVO } = receivedPkTeamPrize.data.result;
-        //     message += `【商圈PK奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
+        //     message += `【商圈PK奖励???${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
         //     if ($.isNode()) {
-        //       await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈队伍】PK获胜\n【奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
+        //       await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账???${$.index}??? ${$.nickName}\n【商圈队伍】PK获胜\n【奖励???${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
         //     }
         //   } else if (receivedPkTeamPrize.data.result.pkResult === 2) {
         //     if ($.isNode()) {
-        //       await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈队伍】PK失败`)
+        //       await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账???${$.index}??? ${$.nickName}\n【商圈队伍】PK失败`)
         //     }
         //   }
         // }
@@ -428,30 +428,30 @@ async function businessCircleActivity() {
     if (pkPrizeStatus === 2) {
       console.log(`开始领取商圈PK奖励`);
       const getPkPrizeRes = await smtg_getPkPrize();
-      console.log(`商圈PK奖励领取结果：${JSON.stringify(getPkPrizeRes)}`)
+      console.log(`商圈PK奖励领取结果???${JSON.stringify(getPkPrizeRes)}`)
       if (getPkPrizeRes.data.bizCode === 0) {
         const { pkPersonPrizeInfoVO, pkTeamPrizeInfoVO } = getPkPrizeRes.data.result;
-        message += `【商圈PK奖励】${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
+        message += `【商圈PK奖励???${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
       }
     }
-    console.log(`我方商圈人气值/对方商圈人气值：${businessCircleVO.hotPoint}/${otherBusinessCircleVO.hotPoint}`);
-    console.log(`我方商圈成员数量/对方商圈成员数量：${businessCircleVO.memberCount}/${otherBusinessCircleVO.memberCount}`);
-    message += `【我方商圈】${businessCircleVO.memberCount}/${businessCircleVO.hotPoint}\n`;
-    message += `【对方商圈】${otherBusinessCircleVO.memberCount}/${otherBusinessCircleVO.hotPoint}\n`;
-    // message += `【我方商圈人气值】${businessCircleVO.hotPoint}\n`;
-    // message += `【对方商圈人气值】${otherBusinessCircleVO.hotPoint}\n`;
+    console.log(`我方商圈人气???/对方商圈人气值：${businessCircleVO.hotPoint}/${otherBusinessCircleVO.hotPoint}`);
+    console.log(`我方商圈成员数量/对方商圈成员数量???${businessCircleVO.memberCount}/${otherBusinessCircleVO.memberCount}`);
+    message += `【我方商圈???${businessCircleVO.memberCount}/${businessCircleVO.hotPoint}\n`;
+    message += `【对方商圈???${otherBusinessCircleVO.memberCount}/${otherBusinessCircleVO.hotPoint}\n`;
+    // message += `【我方商圈人气值???${businessCircleVO.hotPoint}\n`;
+    // message += `【对方商圈人气值???${otherBusinessCircleVO.hotPoint}\n`;
     businessCircleJump = $.getdata('jdBusinessCircleJump') ? $.getdata('jdBusinessCircleJump') : businessCircleJump;
     if ($.isNode() && process.env.jdBusinessCircleJump) {
       businessCircleJump = process.env.jdBusinessCircleJump;
     }
     if (`${businessCircleJump}` === 'false') {
-      console.log(`\n小于对方300热力值自动更换商圈队伍: 您设置的是禁止自动更换商圈队伍\n`);
+      console.log(`\n小于对方300热力值自动更换商圈队???: 您设置的是禁止自动更换商圈队伍\n`);
       return
     }
     if (otherBusinessCircleVO.hotPoint - businessCircleVO.hotPoint > 300 && (Date.now() > (pkSettleTime - 24 * 60 * 60 * 1000))) {
       //退出该商圈
       if (inviteCode === '-4msulYas0O2JsRhE-2TA5XZmBQ') return;
-      console.log(`商圈PK已过1天，对方商圈人气值还大于我方商圈人气值300，退出该商圈重新加入`);
+      console.log(`商圈PK已过1天，对方商圈人气值还大于我方商圈人气???300，退出该商圈重新加入`);
       await smtg_quitBusinessCircle();
     } else if (otherBusinessCircleVO.hotPoint > businessCircleVO.hotPoint && (Date.now() > (pkSettleTime - 24 * 60 * 60 * 1000 * 2))) {
       //退出该商圈
@@ -463,18 +463,18 @@ async function businessCircleActivity() {
     console.log(`${businessCirclePKDetailRes.data.bizMsg}`);
     console.log(`开始领取商圈PK奖励`);
     const getPkPrizeRes = await smtg_getPkPrize();
-    console.log(`商圈PK奖励领取结果：${JSON.stringify(getPkPrizeRes)}`)
+    console.log(`商圈PK奖励领取结果???${JSON.stringify(getPkPrizeRes)}`)
     if (getPkPrizeRes && getPkPrizeRes.data.bizCode === 0) {
       const { pkPersonPrizeInfoVO, pkTeamPrizeInfoVO } = getPkPrizeRes.data.result;
-      $.msg($.name, '', `【京东账号${$.index}】 ${$.nickName}\n【商圈PK奖励】${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
+      $.msg($.name, '', `【京东账???${$.index}??? ${$.nickName}\n【商圈PK奖励???${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
       if ($.isNode()) {
-        await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈PK奖励】${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
+        await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账???${$.index}??? ${$.nickName}\n【商圈PK奖励???${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
       }
     }
   } else if (businessCirclePKDetailRes && businessCirclePKDetailRes.data.bizCode === 206) {
-    console.log(`您暂未加入商圈,现在给您加入LXK9301的商圈`);
+    console.log(`您暂未加入商???,现在给您加入LXK9301的商圈`);
     const joinBusinessCircleRes = await smtg_joinBusinessCircle(myCircleId);
-    console.log(`参加商圈结果：${JSON.stringify(joinBusinessCircleRes)}`)
+    console.log(`参加商圈结果???${JSON.stringify(joinBusinessCircleRes)}`)
     if (joinBusinessCircleRes.data.bizCode !== 0) {
       console.log(`您加入LXK9301的商圈失败，现在给您随机加入一个商圈`);
       const BusinessCircleList = await smtg_getBusinessCircleList();
@@ -482,11 +482,11 @@ async function businessCircleActivity() {
         const { businessCircleVOList } = BusinessCircleList.data.result;
         const { circleId } = businessCircleVOList[randomNumber(0, businessCircleVOList.length)];
         const joinBusinessCircleRes = await smtg_joinBusinessCircle(circleId);
-        console.log(`随机加入商圈结果：${JSON.stringify(joinBusinessCircleRes)}`)
+        console.log(`随机加入商圈结果???${JSON.stringify(joinBusinessCircleRes)}`)
       }
     }
   } else {
-    console.log(`访问商圈详情失败：${JSON.stringify(businessCirclePKDetailRes)}`);
+    console.log(`访问商圈详情失败???${JSON.stringify(businessCirclePKDetailRes)}`);
   }
 }
 //我的货架
@@ -498,9 +498,9 @@ async function myProductList() {
     for (let item of shelfList) {
       console.log(`\nshelfId/name : ${item.shelfId}/${item.name}`);
       console.log(`货架等级 level ${item.level}/${item.maxLevel}`);
-      console.log(`上架状态 groundStatus ${item.groundStatus}`);
-      console.log(`解锁状态 unlockStatus ${item.unlockStatus}`);
-      console.log(`升级状态 upgradeStatus ${item.upgradeStatus}`);
+      console.log(`上架状??? groundStatus ${item.groundStatus}`);
+      console.log(`解锁状??? unlockStatus ${item.unlockStatus}`);
+      console.log(`升级状??? upgradeStatus ${item.upgradeStatus}`);
       if (item.unlockStatus === 0) {
         console.log(`${item.name}不可解锁`)
       } else if (item.unlockStatus === 1) {
@@ -515,7 +515,7 @@ async function myProductList() {
         if (productListRes.data.bizCode === 0) {
           const { productList } = productListRes.data.result;
           if (productList && productList.length > 0) {
-            // 此处限时商品未分配才会出现
+            // 此处限时商品未分配才会出???
             let limitTimeProduct = [];
             for (let item of productList) {
               if (item.productType === 2) {
@@ -545,7 +545,7 @@ async function myProductList() {
     }
   }
 }
-//根据类型解锁一个商品,货架可上架商品时调用
+//根据类型解锁一个商???,货架可上架商品时调用
 async function unlockProductByCategory(category) {
   const smtgProductListRes = await smtg_productList();
   if (smtgProductListRes.data.bizCode === 0) {
@@ -560,11 +560,11 @@ async function unlockProductByCategory(category) {
       console.log(`待解锁的商品数量:${productListByCategory.length}`);
       await smtg_unlockProduct(productListByCategory[productListByCategory.length - 1]['productId']);
     } else {
-      console.log("该类型商品暂时无法解锁");
+      console.log("该类型商品暂时无法解???");
     }
   }
 }
-//升级货架和商品
+//升级货架和商???
 async function upgrade() {
   superMarketUpgrade = $.getdata('jdSuperMarketUpgrade') ? $.getdata('jdSuperMarketUpgrade') : superMarketUpgrade;
   if ($.isNode() && process.env.SUPERMARKET_UPGRADE) {
@@ -575,7 +575,7 @@ async function upgrade() {
     return
   }
   console.log(`\n*************开始检测升级商品，如遇到商品能解锁，则优先解锁***********`)
-  console.log('目前没有平稳升级,只取倒数几个商品进行升级,普通货架取倒数4个商品,冰柜货架取倒数3个商品,水果货架取倒数2个商品')
+  console.log('目前没有平稳升级,只取倒数几个商品进行升级,普通货架取倒数4个商???,冰柜货架取倒数3个商???,水果货架取倒数2个商???')
   const smtgProductListRes = await smtg_productList();
   if (smtgProductListRes.data.bizCode === 0) {
     let productType1 = [], shelfCategory_1 = [], shelfCategory_2 = [], shelfCategory_3 = [];
@@ -600,9 +600,9 @@ async function upgrade() {
     shelfCategory_2 = shelfCategory_2.slice(-3);
     shelfCategory_3 = shelfCategory_3.slice(-2);
     const shelfCategorys = shelfCategory_1.concat(shelfCategory_2).concat(shelfCategory_3);
-    console.log(`\n商品名称       归属货架     目前等级    解锁状态    可升级状态`)
+    console.log(`\n商品名称       归属货架     目前等级    解锁状???    可升级状态`)
     for (let item of shelfCategorys) {
-      console.log(`  ${item["name"].length<3?item["name"]+`\xa0`:item["name"]}       ${item['shelfCategory'] === 1 ? '普通货架' : item['shelfCategory'] === 2 ? '冰柜货架' : item['shelfCategory'] === 3 ? '水果货架':'未知货架'}       ${item["unlockStatus"] === 0 ? '---' : item["level"]+'级'}     ${item["unlockStatus"] === 0 ? '未解锁' : '已解锁'}      ${item["upgradeStatus"] === 1 ? '可以升级' : item["upgradeStatus"] === 0 ? '不可升级':item["upgradeStatus"]}`)
+      console.log(`  ${item["name"].length<3?item["name"]+`\xa0`:item["name"]}       ${item['shelfCategory'] === 1 ? '普通货???' : item['shelfCategory'] === 2 ? '冰柜货架' : item['shelfCategory'] === 3 ? '水果货架':'未知货架'}       ${item["unlockStatus"] === 0 ? '---' : item["level"]+'???'}     ${item["unlockStatus"] === 0 ? '未解???' : '已解???'}      ${item["upgradeStatus"] === 1 ? '可以升级' : item["upgradeStatus"] === 0 ? '不可升级':item["upgradeStatus"]}`)
     }
     shelfCategorys.sort(sortSyData);
     for (let item of shelfCategorys) {
@@ -618,7 +618,7 @@ async function upgrade() {
       }
     }
   }
-  console.log('\n**********开始检查能否升级货架***********');
+  console.log('\n**********开始检查能否升级货???***********');
   const shelfListRes = await smtg_shelfList();
   if (shelfListRes.data.bizCode === 0) {
     const { shelfList } = shelfListRes.data.result;
@@ -628,25 +628,25 @@ async function upgrade() {
         shelfList_upgrade.push(item);
       }
     }
-    console.log(`待升级货架数量${shelfList_upgrade.length}个`);
+    console.log(`待升级货架数???${shelfList_upgrade.length}个`);
     if (shelfList_upgrade && shelfList_upgrade.length > 0) {
       shelfList_upgrade.sort(sortSyData);
       console.log("\n可升级货架名         等级     升级所需金币");
       for (let item of shelfList_upgrade) {
         console.log(` [${item["name"]}]         ${item["level"]}/${item["maxLevel"]}         ${item["upgradeCostGold"]}`);
       }
-      console.log(`开始升级[${shelfList_upgrade[0].name}]货架，当前等级${shelfList_upgrade[0].level}，所需金币${shelfList_upgrade[0].upgradeCostGold}\n`);
+      console.log(`开始升级[${shelfList_upgrade[0].name}]货架，当前等???${shelfList_upgrade[0].level}，所需金币${shelfList_upgrade[0].upgradeCostGold}\n`);
       await smtg_upgradeShelf(shelfList_upgrade[0].shelfId);
     }
   }
 }
 async function manageProduct() {
-  console.log(`安排上货(单价最大商品)`);
+  console.log(`安排上货(单价最大商???)`);
   const shelfListRes = await smtg_shelfList();
   if (shelfListRes.data.bizCode === 0) {
     const { shelfList } = shelfListRes.data.result;
     console.log(`我的货架数量:${shelfList && shelfList.length}`);
-    let shelfListUnlock = [];//可以上架的货架
+    let shelfListUnlock = [];//可以上架的货???
     for (let item of shelfList) {
       if (item['groundStatus'] === 1 || item['groundStatus'] === 2) {
         shelfListUnlock.push(item);
@@ -689,7 +689,7 @@ async function limitTimeProduct() {
     let productList2 = [];
     for (let item of productList) {
       if (item['productType'] === 2 && item['groundStatus'] === 1) {
-        //未上架并且限时商品
+        //未上架并且限时商???
         console.log(`出现限时商品[${item.name}]`)
         productList2.push(item);
       }
@@ -720,7 +720,7 @@ async function limitTimeProduct() {
     }
   }
 }
-//领取店铺升级的蓝币奖励
+//领取店铺升级的蓝币奖???
 async function receiveUserUpgradeBlue() {
   $.receiveUserUpgradeBlue = 0;
   if ($.userUpgradeBlueVos && $.userUpgradeBlueVos.length > 0) {
@@ -745,14 +745,14 @@ async function Home() {
     const { result } = homeRes.data;
     const { shopName, totalBlue } = result;
     subTitle = shopName;
-    message += `【总蓝币】${totalBlue}个\n`;
+    message += `【总蓝币???${totalBlue}个\n`;
   }
 }
 //=============================================脚本使用到的京东API=====================================
 
-//===新版本
+//===新版???
 
-//查询有哪些货架
+//查询有哪些货???
 function smtg_shopIndex() {
   return new Promise((resolve) => {
     $.get(taskUrl('smtg_shopIndex', { "channel": 1 }), async (err, resp, data) => {
@@ -764,10 +764,10 @@ function smtg_shopIndex() {
           data = JSON.parse(data);
           if (data && data.data['bizCode'] === 0) {
             const { shopId, shelfList, merchandiseList, level } = data.data['result'];
-            message += `【店铺等级】${level}\n`;
+            message += `【店铺等级???${level}\n`;
             if (shelfList && shelfList.length > 0) {
               for (let item of shelfList) {
-                //status: 2可解锁,1可升级,-1不可解锁
+                //status: 2可解???,1可升???,-1不可解锁
                 if (item['status'] === 2) {
                   $.log(`${item['name']}可解锁\n`)
                   await smtg_shelfUnlock({ shopId, "shelfId": item['id'], "channel": 1 })
@@ -777,9 +777,9 @@ function smtg_shopIndex() {
                 } else if (item['status'] === -1) {
                   $.log(`[${item['name']}] 未解锁`)
                 } else if (item['status'] === 0) {
-                  $.log(`[${item['name']}] 已解锁，当前等级：${item['level']}级`)
+                  $.log(`[${item['name']}] 已解锁，当前等级???${item['level']}级`)
                 } else {
-                  $.log(`未知店铺状态(status)：${item['status']}\n`)
+                  $.log(`未知店铺状???(status)???${item['status']}\n`)
                 }
               }
             }
@@ -1000,7 +1000,7 @@ function smtgHome() {
             const { result } = data.data;
             const { shopName, totalBlue, userUpgradeBlueVos, turnoverProgress } = result;
             $.userUpgradeBlueVos = userUpgradeBlueVos;
-            $.turnoverProgress = turnoverProgress;//是否可解锁
+            $.turnoverProgress = turnoverProgress;//是否可解???
           }
         }
       } catch (e) {
@@ -1028,13 +1028,13 @@ function smtgQueryPkTask() {
               for (let item of taskList) {
                 if (item.taskStatus === 1) {
                   if (item.prizeStatus === 1) {
-                    //任务已做完，但未领取奖励， 现在为您领取奖励
+                    //任务已做完，但未领取奖励??? 现在为您领取奖励
                     await smtgObtainPkTaskPrize(item.taskId);
                   } else if (item.prizeStatus === 0) {
-                    console.log(`[${item.title}] 已做完 ${item.finishNum}/${item.targetNum}`);
+                    console.log(`[${item.title}] 已做??? ${item.finishNum}/${item.targetNum}`);
                   }
                 } else {
-                  console.log(`[${item.title}] 未做完 ${item.finishNum}/${item.targetNum}`)
+                  console.log(`[${item.title}] 未做??? ${item.finishNum}/${item.targetNum}`)
                   if (item.content) {
                     const { itemId } = item.content[item.type];
                     console.log('itemId', itemId)
@@ -1055,7 +1055,7 @@ function smtgQueryPkTask() {
     })
   })
 }
-//PK邀请好友
+//PK邀请好???
 function smtgDoAssistPkTask(code) {
   return new Promise((resolve) => {
     $.get(taskUrl('smtg_doAssistPkTask', {"inviteCode": code}), (err, resp, data) => {
@@ -1318,7 +1318,7 @@ function smtg_shelfProductList(shelfId) {
     console.log(`开始检查货架[${shelfId}] 可上架产品`)
     $.get(taskUrl('smtg_shelfProductList', { shelfId }), (err, resp, data) => {
       try {
-        // console.log(`检查货架[${shelfId}] 可上架产品结果:${data}`)
+        // console.log(`检查货架[${shelfId}] 可上架产品结???:${data}`)
         if (err) {
           console.log('\n东东超市: API查询请求失败 ‼️‼️')
           console.log(JSON.stringify(err));
@@ -1500,7 +1500,7 @@ function sortTotalPriceGold(a, b) {
 //格式化助力码
 function shareCodesFormat() {
   return new Promise(resolve => {
-    console.log(`第${$.index}个京东账号的助力码:::${jdSuperMarketShareArr[$.index - 1]}`)
+    console.log(`???${$.index}个京东账号的助力???:::${jdSuperMarketShareArr[$.index - 1]}`)
     if (jdSuperMarketShareArr[$.index - 1]) {
       newShareCodes = jdSuperMarketShareArr[$.index - 1].split('@');
     } else {
@@ -1508,7 +1508,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
-    console.log(`格式化后第${$.index}个京东账号的助力码${JSON.stringify(newShareCodes)}`)
+    console.log(`格式化后???${$.index}个京东账号的助力???${JSON.stringify(newShareCodes)}`)
     resolve();
   })
 }
@@ -1535,9 +1535,9 @@ function requireConfig() {
       cookiesArr.reverse();
       cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
     }
-    console.log(`共${cookiesArr.length}个京东账号\n`);
-    // console.log(`东东超市已改版,目前暂不用助力, 故无助力码`)
-    // console.log(`\n东东超市商圈助力码::${JSON.stringify(jdSuperMarketShareArr)}`);
+    console.log(`???${cookiesArr.length}个京东账号\n`);
+    // console.log(`东东超市已改???,目前暂不用助???, 故无助力码`)
+    // console.log(`\n东东超市商圈助力???::${JSON.stringify(jdSuperMarketShareArr)}`);
     // console.log(`您提供了${jdSuperMarketShareArr.length}个账号的助力码\n`);
     resolve()
   })
@@ -1596,7 +1596,7 @@ function taskUrl(function_id, body = {}) {
 }
 /**
  * 生成随机数字
- * @param {number} min 最小值（包含）
+ * @param {number} min 最小值（包含???
  * @param {number} max 最大值（不包含）
  */
 function randomNumber(min = 0, max = 100) {
@@ -1614,4 +1614,4 @@ function jsonParse(str) {
   }
 }
 // prettier-ignore
-function Env(t,e){class s{constructor(t){this.env=t}send(t,e="GET"){t="string"==typeof t?{url:t}:t;let s=this.get;return"POST"===e&&(s=this.post),new Promise((e,i)=>{s.call(this,t,(t,s,r)=>{t?i(t):e(s)})})}get(t){return this.send.call(this.env,t)}post(t){return this.send.call(this.env,t,"POST")}}return new class{constructor(t,e){this.name=t,this.http=new s(this),this.data=null,this.dataFile="box.dat",this.logs=[],this.isMute=!1,this.isNeedRewrite=!1,this.logSeparator="\n",this.startTime=(new Date).getTime(),Object.assign(this,e),this.log("",`🔔${this.name}, 开�?!`)}isNode(){return"undefined"!=typeof module&&!!module.exports}isQuanX(){return"undefined"!=typeof $task}isSurge(){return"undefined"!=typeof $httpClient&&"undefined"==typeof $loon}isLoon(){return"undefined"!=typeof $loon}toObj(t,e=null){try{return JSON.parse(t)}catch{return e}}toStr(t,e=null){try{return JSON.stringify(t)}catch{return e}}getjson(t,e){let s=e;const i=this.getdata(t);if(i)try{s=JSON.parse(this.getdata(t))}catch{}return s}setjson(t,e){try{return this.setdata(JSON.stringify(t),e)}catch{return!1}}getScript(t){return new Promise(e=>{this.get({url:t},(t,s,i)=>e(i))})}runScript(t,e){return new Promise(s=>{let i=this.getdata("@chavy_boxjs_userCfgs.httpapi");i=i?i.replace(/\n/g,"").trim():i;let r=this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");r=r?1*r:20,r=e&&e.timeout?e.timeout:r;const[o,h]=i.split("@"),n={url:`http://${h}/v1/scripting/evaluate`,body:{script_text:t,mock_type:"cron",timeout:r},headers:{"X-Key":o,Accept:"*/*"}};this.post(n,(t,e,i)=>s(i))}).catch(t=>this.logErr(t))}loaddata(){if(!this.isNode())return{};{this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e);if(!s&&!i)return{};{const i=s?t:e;try{return JSON.parse(this.fs.readFileSync(i))}catch(t){return{}}}}}writedata(){if(this.isNode()){this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e),r=JSON.stringify(this.data);s?this.fs.writeFileSync(t,r):i?this.fs.writeFileSync(e,r):this.fs.writeFileSync(t,r)}}lodash_get(t,e,s){const i=e.replace(/\[(\d+)\]/g,".$1").split(".");let r=t;for(const t of i)if(r=Object(r)[t],void 0===r)return s;return r}lodash_set(t,e,s){return Object(t)!==t?t:(Array.isArray(e)||(e=e.toString().match(/[^.[\]]+/g)||[]),e.slice(0,-1).reduce((t,s,i)=>Object(t[s])===t[s]?t[s]:t[s]=Math.abs(e[i+1])>>0==+e[i+1]?[]:{},t)[e[e.length-1]]=s,t)}getdata(t){let e=this.getval(t);if(/^@/.test(t)){const[,s,i]=/^@(.*?)\.(.*?)$/.exec(t),r=s?this.getval(s):"";if(r)try{const t=JSON.parse(r);e=t?this.lodash_get(t,i,""):e}catch(t){e=""}}return e}setdata(t,e){let s=!1;if(/^@/.test(e)){const[,i,r]=/^@(.*?)\.(.*?)$/.exec(e),o=this.getval(i),h=i?"null"===o?null:o||"{}":"{}";try{const e=JSON.parse(h);this.lodash_set(e,r,t),s=this.setval(JSON.stringify(e),i)}catch(e){const o={};this.lodash_set(o,r,t),s=this.setval(JSON.stringify(o),i)}}else s=this.setval(t,e);return s}getval(t){return this.isSurge()||this.isLoon()?$persistentStore.read(t):this.isQuanX()?$prefs.valueForKey(t):this.isNode()?(this.data=this.loaddata(),this.data[t]):this.data&&this.data[t]||null}setval(t,e){return this.isSurge()||this.isLoon()?$persistentStore.write(t,e):this.isQuanX()?$prefs.setValueForKey(t,e):this.isNode()?(this.data=this.loaddata(),this.data[e]=t,this.writedata(),!0):this.data&&this.data[e]||null}initGotEnv(t){this.got=this.got?this.got:require("got"),this.cktough=this.cktough?this.cktough:require("tough-cookie"),this.ckjar=this.ckjar?this.ckjar:new this.cktough.CookieJar,t&&(t.headers=t.headers?t.headers:{},void 0===t.headers.Cookie&&void 0===t.cookieJar&&(t.cookieJar=this.ckjar))}get(t,e=(()=>{})){t.headers&&(delete t.headers["Content-Type"],delete t.headers["Content-Length"]),this.isSurge()||this.isLoon()?(this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient.get(t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)})):this.isQuanX()?(this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t))):this.isNode()&&(this.initGotEnv(t),this.got(t).on("redirect",(t,e)=>{try{if(t.headers["set-cookie"]){const s=t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();s&&this.ckjar.setCookieSync(s,null),e.cookieJar=this.ckjar}}catch(t){this.logErr(t)}}).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>{const{message:s,response:i}=t;e(s,i,i&&i.body)}))}post(t,e=(()=>{})){if(t.body&&t.headers&&!t.headers["Content-Type"]&&(t.headers["Content-Type"]="application/x-www-form-urlencoded"),t.headers&&delete t.headers["Content-Length"],this.isSurge()||this.isLoon())this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient.post(t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)});else if(this.isQuanX())t.method="POST",this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t));else if(this.isNode()){this.initGotEnv(t);const{url:s,...i}=t;this.got.post(s,i).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>{const{message:s,response:i}=t;e(s,i,i&&i.body)})}}time(t,e=null){const s=e?new Date(e):new Date;let i={"M+":s.getMonth()+1,"d+":s.getDate(),"H+":s.getHours(),"m+":s.getMinutes(),"s+":s.getSeconds(),"q+":Math.floor((s.getMonth()+3)/3),S:s.getMilliseconds()};/(y+)/.test(t)&&(t=t.replace(RegExp.$1,(s.getFullYear()+"").substr(4-RegExp.$1.length)));for(let e in i)new RegExp("("+e+")").test(t)&&(t=t.replace(RegExp.$1,1==RegExp.$1.length?i[e]:("00"+i[e]).substr((""+i[e]).length)));return t}msg(e=t,s="",i="",r){const o=t=>{if(!t)return t;if("string"==typeof t)return this.isLoon()?t:this.isQuanX()?{"open-url":t}:this.isSurge()?{url:t}:void 0;if("object"==typeof t){if(this.isLoon()){let e=t.openUrl||t.url||t["open-url"],s=t.mediaUrl||t["media-url"];return{openUrl:e,mediaUrl:s}}if(this.isQuanX()){let e=t["open-url"]||t.url||t.openUrl,s=t["media-url"]||t.mediaUrl;return{"open-url":e,"media-url":s}}if(this.isSurge()){let e=t.url||t.openUrl||t["open-url"];return{url:e}}}};if(this.isMute||(this.isSurge()||this.isLoon()?$notification.post(e,s,i,o(r)):this.isQuanX()&&$notify(e,s,i,o(r))),!this.isMuteLog){let t=["","==============📣系统通知📣=============="];t.push(e),s&&t.push(s),i&&t.push(i),console.log(t.join("\n")),this.logs=this.logs.concat(t)}}log(...t){t.length>0&&(this.logs=[...this.logs,...t]),console.log(t.join(this.logSeparator))}logErr(t,e){const s=!this.isSurge()&&!this.isQuanX()&&!this.isLoon();s?this.log("",`❗️${this.name}, 错误!`,t.stack):this.log("",`❗️${this.name}, 错误!`,t)}wait(t){return new Promise(e=>setTimeout(e,t))}done(t={}){const e=(new Date).getTime(),s=(e-this.startTime)/1e3;this.log("",`🔔${this.name}, 结束! 🕛 ${s} 秒`),this.log(),(this.isSurge()||this.isQuanX()||this.isLoon())&&$done(t)}}(t,e)}
+function Env(t,e){class s{constructor(t){this.env=t}send(t,e="GET"){t="string"==typeof t?{url:t}:t;let s=this.get;return"POST"===e&&(s=this.post),new Promise((e,i)=>{s.call(this,t,(t,s,r)=>{t?i(t):e(s)})})}get(t){return this.send.call(this.env,t)}post(t){return this.send.call(this.env,t,"POST")}}return new class{constructor(t,e){this.name=t,this.http=new s(this),this.data=null,this.dataFile="box.dat",this.logs=[],this.isMute=!1,this.isNeedRewrite=!1,this.logSeparator="\n",this.startTime=(new Date).getTime(),Object.assign(this,e),this.log("",`🔔${this.name}, 开???!`)}isNode(){return"undefined"!=typeof module&&!!module.exports}isQuanX(){return"undefined"!=typeof $task}isSurge(){return"undefined"!=typeof $httpClient&&"undefined"==typeof $loon}isLoon(){return"undefined"!=typeof $loon}toObj(t,e=null){try{return JSON.parse(t)}catch{return e}}toStr(t,e=null){try{return JSON.stringify(t)}catch{return e}}getjson(t,e){let s=e;const i=this.getdata(t);if(i)try{s=JSON.parse(this.getdata(t))}catch{}return s}setjson(t,e){try{return this.setdata(JSON.stringify(t),e)}catch{return!1}}getScript(t){return new Promise(e=>{this.get({url:t},(t,s,i)=>e(i))})}runScript(t,e){return new Promise(s=>{let i=this.getdata("@chavy_boxjs_userCfgs.httpapi");i=i?i.replace(/\n/g,"").trim():i;let r=this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");r=r?1*r:20,r=e&&e.timeout?e.timeout:r;const[o,h]=i.split("@"),n={url:`http://${h}/v1/scripting/evaluate`,body:{script_text:t,mock_type:"cron",timeout:r},headers:{"X-Key":o,Accept:"*/*"}};this.post(n,(t,e,i)=>s(i))}).catch(t=>this.logErr(t))}loaddata(){if(!this.isNode())return{};{this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e);if(!s&&!i)return{};{const i=s?t:e;try{return JSON.parse(this.fs.readFileSync(i))}catch(t){return{}}}}}writedata(){if(this.isNode()){this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e),r=JSON.stringify(this.data);s?this.fs.writeFileSync(t,r):i?this.fs.writeFileSync(e,r):this.fs.writeFileSync(t,r)}}lodash_get(t,e,s){const i=e.replace(/\[(\d+)\]/g,".$1").split(".");let r=t;for(const t of i)if(r=Object(r)[t],void 0===r)return s;return r}lodash_set(t,e,s){return Object(t)!==t?t:(Array.isArray(e)||(e=e.toString().match(/[^.[\]]+/g)||[]),e.slice(0,-1).reduce((t,s,i)=>Object(t[s])===t[s]?t[s]:t[s]=Math.abs(e[i+1])>>0==+e[i+1]?[]:{},t)[e[e.length-1]]=s,t)}getdata(t){let e=this.getval(t);if(/^@/.test(t)){const[,s,i]=/^@(.*?)\.(.*?)$/.exec(t),r=s?this.getval(s):"";if(r)try{const t=JSON.parse(r);e=t?this.lodash_get(t,i,""):e}catch(t){e=""}}return e}setdata(t,e){let s=!1;if(/^@/.test(e)){const[,i,r]=/^@(.*?)\.(.*?)$/.exec(e),o=this.getval(i),h=i?"null"===o?null:o||"{}":"{}";try{const e=JSON.parse(h);this.lodash_set(e,r,t),s=this.setval(JSON.stringify(e),i)}catch(e){const o={};this.lodash_set(o,r,t),s=this.setval(JSON.stringify(o),i)}}else s=this.setval(t,e);return s}getval(t){return this.isSurge()||this.isLoon()?$persistentStore.read(t):this.isQuanX()?$prefs.valueForKey(t):this.isNode()?(this.data=this.loaddata(),this.data[t]):this.data&&this.data[t]||null}setval(t,e){return this.isSurge()||this.isLoon()?$persistentStore.write(t,e):this.isQuanX()?$prefs.setValueForKey(t,e):this.isNode()?(this.data=this.loaddata(),this.data[e]=t,this.writedata(),!0):this.data&&this.data[e]||null}initGotEnv(t){this.got=this.got?this.got:require("got"),this.cktough=this.cktough?this.cktough:require("tough-cookie"),this.ckjar=this.ckjar?this.ckjar:new this.cktough.CookieJar,t&&(t.headers=t.headers?t.headers:{},void 0===t.headers.Cookie&&void 0===t.cookieJar&&(t.cookieJar=this.ckjar))}get(t,e=(()=>{})){t.headers&&(delete t.headers["Content-Type"],delete t.headers["Content-Length"]),this.isSurge()||this.isLoon()?(this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient.get(t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)})):this.isQuanX()?(this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t))):this.isNode()&&(this.initGotEnv(t),this.got(t).on("redirect",(t,e)=>{try{if(t.headers["set-cookie"]){const s=t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();s&&this.ckjar.setCookieSync(s,null),e.cookieJar=this.ckjar}}catch(t){this.logErr(t)}}).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>{const{message:s,response:i}=t;e(s,i,i&&i.body)}))}post(t,e=(()=>{})){if(t.body&&t.headers&&!t.headers["Content-Type"]&&(t.headers["Content-Type"]="application/x-www-form-urlencoded"),t.headers&&delete t.headers["Content-Length"],this.isSurge()||this.isLoon())this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient.post(t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)});else if(this.isQuanX())t.method="POST",this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t));else if(this.isNode()){this.initGotEnv(t);const{url:s,...i}=t;this.got.post(s,i).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>{const{message:s,response:i}=t;e(s,i,i&&i.body)})}}time(t,e=null){const s=e?new Date(e):new Date;let i={"M+":s.getMonth()+1,"d+":s.getDate(),"H+":s.getHours(),"m+":s.getMinutes(),"s+":s.getSeconds(),"q+":Math.floor((s.getMonth()+3)/3),S:s.getMilliseconds()};/(y+)/.test(t)&&(t=t.replace(RegExp.$1,(s.getFullYear()+"").substr(4-RegExp.$1.length)));for(let e in i)new RegExp("("+e+")").test(t)&&(t=t.replace(RegExp.$1,1==RegExp.$1.length?i[e]:("00"+i[e]).substr((""+i[e]).length)));return t}msg(e=t,s="",i="",r){const o=t=>{if(!t)return t;if("string"==typeof t)return this.isLoon()?t:this.isQuanX()?{"open-url":t}:this.isSurge()?{url:t}:void 0;if("object"==typeof t){if(this.isLoon()){let e=t.openUrl||t.url||t["open-url"],s=t.mediaUrl||t["media-url"];return{openUrl:e,mediaUrl:s}}if(this.isQuanX()){let e=t["open-url"]||t.url||t.openUrl,s=t["media-url"]||t.mediaUrl;return{"open-url":e,"media-url":s}}if(this.isSurge()){let e=t.url||t.openUrl||t["open-url"];return{url:e}}}};if(this.isMute||(this.isSurge()||this.isLoon()?$notification.post(e,s,i,o(r)):this.isQuanX()&&$notify(e,s,i,o(r))),!this.isMuteLog){let t=["","==============📣系统通知📣=============="];t.push(e),s&&t.push(s),i&&t.push(i),console.log(t.join("\n")),this.logs=this.logs.concat(t)}}log(...t){t.length>0&&(this.logs=[...this.logs,...t]),console.log(t.join(this.logSeparator))}logErr(t,e){const s=!this.isSurge()&&!this.isQuanX()&&!this.isLoon();s?this.log("",`❗️${this.name}, 错误!`,t.stack):this.log("",`❗️${this.name}, 错误!`,t)}wait(t){return new Promise(e=>setTimeout(e,t))}done(t={}){const e=(new Date).getTime(),s=(e-this.startTime)/1e3;this.log("",`🔔${this.name}, 结束! 🕛 ${s} 秒`),this.log(),(this.isSurge()||this.isQuanX()||this.isLoon())&&$done(t)}}(t,e)}

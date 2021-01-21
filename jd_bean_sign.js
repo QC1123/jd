@@ -2,10 +2,10 @@
  * @Author: LXK9301 https://github.com/LXK9301
  */
 /*
-京豆签到,自用,可N个京东账号
+京豆签到,自用,可N个京东账???
 Node.JS专用
-IOS软件用户请使用 https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
-更新时间：2021-1-19
+IOS软件用户请使??? https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+更新时间???2021-1-19
 Modified From github https://github.com/ruicky/jd_sign_bot
  */
 const $ = new Env('京豆签到');
@@ -29,11 +29,11 @@ if ($.isNode()) {
 }
 !(async() => {
   if (!cookiesArr[0]) {
-    $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+    $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获???', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
   await requireConfig();
-  // 下载最新代码
+  // 下载最新代???
   await downFile();
   const content = await fs.readFileSync(JD_DailyBonusPath, 'utf8')
   for (let i =0; i < cookiesArr.length; i++) {
@@ -43,8 +43,8 @@ if ($.isNode()) {
       $.index = i + 1;
       $.nickName = '';
       await TotalBean();
-      console.log(`*****************开始京东账号${$.index} ${$.nickName || $.UserName}京豆签到*******************\n`);
-      console.log(`⚠️⚠️⚠️⚠️目前Bark APP推送通知消息对推送内容长度有限制，如推送通知中包含此推送方式脚本会默认转换成简洁内容推送 ⚠️⚠️⚠️⚠️\n`)
+      console.log(`*****************开始京东账???${$.index} ${$.nickName || $.UserName}京豆签到*******************\n`);
+      console.log(`⚠️⚠️⚠️⚠️目前Bark APP推送通知消息对推送内容长度有限制，如推送通知中包含此推送方式脚本会默认转换成简洁内容推??? ⚠️⚠️⚠️⚠️\n`)
       await changeFile(content);
       await execSign();
     }
@@ -60,7 +60,7 @@ async function execSign() {
     //   const notifyContent = await fs.readFileSync(resultPath, "utf8");
     //   console.log(`👇👇👇👇👇👇👇👇👇👇👇LOG记录👇👇👇👇👇👇👇👇👇👇👇\n${notifyContent}\n👆👆👆👆👆👆👆👆👆LOG记录👆👆👆👆👆👆👆👆👆👆👆`);
     // } else {
-    //   console.log('没有提供通知推送，则打印脚本执行日志')
+    //   console.log('没有提供通知推送，则打印脚本执行日???')
     //   await exec(`${process.execPath} ${JD_DailyBonusPath}`, { stdio: "inherit" });
     // }
     await exec(`${process.execPath} ${JD_DailyBonusPath} >> ${resultPath}`);
@@ -74,7 +74,7 @@ async function execSign() {
       let BarkContent = '';
       if (fs.existsSync(resultPath)) {
         notifyContent = await fs.readFileSync(resultPath, "utf8");
-        const barkContentStart = notifyContent.indexOf('【签到概览】')
+        const barkContentStart = notifyContent.indexOf('【签到概览???')
         const barkContentEnd = notifyContent.length;
         if (process.env.JD_BEAN_SIGN_STOP_NOTIFY === 'true') return
         if (process.env.BARK_PUSH || notify.BARK_PUSH) process.env.JD_BEAN_SIGN_NOTIFY_SIMPLE = 'true';
@@ -89,15 +89,15 @@ async function execSign() {
           }
         }
       }
-      //不管哪个时区,这里得到的都是北京时间的时间戳;
+      //不管哪个时区,这里得到的都是北京时间的时间???;
       const UTC8 = new Date().getTime() + new Date().getTimezoneOffset()*60000 + 28800000;
       $.beanSignTime = timeFormat(UTC8);
-      console.log(`脚本执行完毕时间：${$.beanSignTime}`)
+      console.log(`脚本执行完毕时间???${$.beanSignTime}`)
       if (BarkContent) {
-        await notify.sendNotify(`京豆签到 - 账号${$.index} - ${$.nickName || $.UserName}`, `【签到号 ${$.index}】: ${$.nickName || $.UserName}\n【签到时间】:  ${$.beanSignTime}\n${BarkContent}`);
+        await notify.sendNotify(`京豆签到 - 账号${$.index} - ${$.nickName || $.UserName}`, `【签到号 ${$.index}???: ${$.nickName || $.UserName}\n【签到时间???:  ${$.beanSignTime}\n${BarkContent}`);
       }
     }
-    //运行完成后，删除下载的文件
+    //运行完成后，删除下载的文???
     console.log('运行完成后，删除下载的文件\n')
     await deleteFile(resultPath);//删除result.txt
     await deleteFile(JD_DailyBonusPath);//删除JD_DailyBonus.js
@@ -162,7 +162,7 @@ async function changeFile (content) {
   }
 }
 async function deleteFile(path) {
-  // 查看文件result.txt是否存在,如果存在,先删除
+  // 查看文件result.txt是否存在,如果存在,先删???
   const fileExists = await fs.existsSync(path);
   // console.log('fileExists', fileExists);
   if (fileExists) {
@@ -229,7 +229,7 @@ function downloadUrl(url = 'https://raw.githubusercontent.com/NobyDa/Script/mast
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`检测到您不能访问外网,将使用CDN下载JD_DailyBonus.js文件`)
+          console.log(`检测到您不能访问外???,将使用CDN下载JD_DailyBonus.js文件`)
         } else {
           $.body = data;
         }

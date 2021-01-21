@@ -26,16 +26,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓??? Action???
         env:
           cache-name: cache-node-modules
         with:
           path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json ??? Hash 作为缓存??? key。也可以使用 package.json 代替
       - name: npm install
         run: |
           npm install
-      - name: '运行 【疯狂的joy】'
+      - name: '运行 【疯狂的joy???'
         run: |
           node jd_crazy_joy.js
         env:
@@ -50,6 +50,6 @@ jobs:
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          JDJOY_HELPSELF: ${{ secrets.JDJOY_HELPSELF }} #疯狂的joy循环助力，true表示循环助力,false表示不循环助力，默认不开启循环助力。
-          JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }} #疯狂的joy京豆兑换，目前最小值为500/1000京豆，默认不开启京豆兑换。
+          JDJOY_HELPSELF: ${{ secrets.JDJOY_HELPSELF }} #疯狂的joy循环助力，true表示循环助力,false表示不循环助力，默认不开启循环助力???
+          JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }} #疯狂的joy京豆兑换，目前最小值为500/1000京豆，默认不开启京豆兑换???
           JDJOY_SHARECODES: ${{ secrets.JDJOY_SHARECODES }}

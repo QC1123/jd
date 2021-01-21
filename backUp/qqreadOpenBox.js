@@ -2,13 +2,13 @@
 LXK9301修改自用，单独开宝箱
 ******************************************************************************
 本人github地址     https://github.com/ziye12/JavaScript
-转载请备注个名字，谢谢
+转载请备注个名字，谢???
 
-1.5 调整宝箱策略，20分钟运行一次就行
+1.5 调整宝箱策略???20分钟运行一次就???
 */
 const $ = Env(`企鹅读书开宝箱`)
 const notify = $.isNode() ? require("../sendNotify") : "";
-const logs = 1;   //0为关闭日志，1为开启
+const logs = 1;   //0为关闭日志，1为开???
 
 let task, tz = '', kz, config = '', CASH = '', COOKIES_SPLIT = '' ;
 let dk,ljyd,sp,ydrw,wktime;
@@ -31,7 +31,7 @@ let QQ_READ_COOKIES = [
   await open_box();
 })()
 .catch((e) => {
-  $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+  $.log('', `??? ${$.name}, 失败! 原因: ${e}!`, '')
 })
 .finally(() => {
   $.done();
@@ -49,11 +49,11 @@ async function open_box() {
     qqreadbodyVal = QQ_READ_COOKIES[i]['qqreadbodyVal'];
     qqreadtimeurlVal = QQ_READ_COOKIES[i]['qqreadtimeurlVal'];
     qqreadtimeheaderVal = QQ_READ_COOKIES[i]['qqreadtimeheaderVal'];
-    await qqreadinfo();//用户名
+    await qqreadinfo();//用户???
     if (!$.isLogin) {
       $.log(`企鹅阅读账号${i + 1} cookie过期`);
       if (nowTimes.getHours() % 12 === 0 && (nowTimes.getMinutes() > 0 && nowTimes.getMinutes() <= 15)) {
-        await notify.sendNotify(`企鹅阅读账号${i + 1} cookie过期`, '请及时更新 QQ_READ_TIME_HEADER_VAL')
+        await notify.sendNotify(`企鹅阅读账号${i + 1} cookie过期`, '请及时更??? QQ_READ_TIME_HEADER_VAL')
       }
       continue
     }
@@ -71,7 +71,7 @@ async function open_box() {
     }
     if (task.data && task.data.treasureBox.timeInterval - 600000 <= 10000) {
       await $.wait(task.data.treasureBox.timeInterval - 600000)
-      await qqreadbox2();//宝箱翻倍
+      await qqreadbox2();//宝箱翻???
     }
   }
   await showmsg();//通知
@@ -110,13 +110,13 @@ function qqreadtrack() {
       let m = date.getMinutes() + ':';
       let s = date.getSeconds();
       let time = Y + M + D + h + m + s;
-      tz += `【数据更新】:更新${track.msg},\n【cookie获取时间】${time}\n`;
-      kz += `【数据更新】:更新${track.msg},\n【cookie获取时间】${time}\n`;
+      tz += `【数据更新???:更新${track.msg},\n【cookie获取时间???${time}\n`;
+      kz += `【数据更新???:更新${track.msg},\n【cookie获取时间???${time}\n`;
       resolve();
     });
   });
 }
-// 用户名
+// 用户???
 function qqreadinfo() {
   return new Promise((resolve, reject) => {
     const toqqreadinfourl = {
@@ -125,7 +125,7 @@ function qqreadinfo() {
       timeout: 60000,
     };
     $.get(toqqreadinfourl, (error, response, data) => {
-      if (logs) $.log(`用户名: ${data}`);
+      if (logs) $.log(`用户???: ${data}`);
       const info = JSON.parse(data);
       if (info.code === 0) {
         $.isLogin = info.data['isLogin'];
@@ -134,8 +134,8 @@ function qqreadinfo() {
           return
         }
       }
-      kz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
-      tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
+      kz += `\n========== ???${info.data.user.nickName}??? ==========\n`;
+      tz += `\n========== ???${info.data.user.nickName}??? ==========\n`;
 
       resolve();
     });
@@ -159,23 +159,23 @@ function qqreadtask() {
 
       if (task.data.invite.nextInviteConfig) {
         tz +=
-            `【现金余额】:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
-            `【第${task.data.invite.issue}期】:时间${task.data.invite.dayRange}\n` +
-            ` 已邀请${task.data.invite.inviteCount}人，再邀请${task.data.invite.nextInviteConfig.count}人获得${task.data.invite.nextInviteConfig.amount}金币\n` +
-            `【${dk.title}】:${dk.amount}金币,${dk.actionText}\n` +
-            `【${ljyd.title}】:${ljyd.amount}金币,${ljyd.actionText}\n` +
-            `【${ydrw.title}】:${ydrw.amount}金币,${ydrw.actionText}\n` +
-            `【${sp.title}】:${sp.amount}金币,${sp.actionText}\n` +
-            `【宝箱任务${task.data.treasureBox.count + 1}】:${task.data.treasureBox.timeInterval / 1000
+            `【现金余额???:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
+            `【第${task.data.invite.issue}期???:时间${task.data.invite.dayRange}\n` +
+            ` 已邀???${task.data.invite.inviteCount}人，再邀???${task.data.invite.nextInviteConfig.count}人获???${task.data.invite.nextInviteConfig.amount}金币\n` +
+            `???${dk.title}???:${dk.amount}金币,${dk.actionText}\n` +
+            `???${ljyd.title}???:${ljyd.amount}金币,${ljyd.actionText}\n` +
+            `???${ydrw.title}???:${ydrw.amount}金币,${ydrw.actionText}\n` +
+            `???${sp.title}???:${sp.amount}金币,${sp.actionText}\n` +
+            `【宝箱任???${task.data.treasureBox.count + 1}???:${task.data.treasureBox.timeInterval / 1000
             }秒后领取\n` +
-            `【${task.data.fans.title}】:${task.data.fans.fansCount}个好友,${task.data.fans.todayAmount}金币\n`;
+            `???${task.data.fans.title}???:${task.data.fans.fansCount}个好???,${task.data.fans.todayAmount}金币\n`;
       }
 
       kz +=
-          `【现金余额】:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
-          `【宝箱任务${task.data.treasureBox.count + 1}】:${task.data.treasureBox.timeInterval / 1000
+          `【现金余额???:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
+          `【宝箱任???${task.data.treasureBox.count + 1}???:${task.data.treasureBox.timeInterval / 1000
           }秒后领取\n` +
-          `【已开宝箱】:${task.data.treasureBox.count}个\n`;
+          `【已开宝箱???:${task.data.treasureBox.count}个\n`;
 
       resolve();
     });
@@ -193,8 +193,8 @@ function qqreaddayread() {
       if (logs) $.log(`每日阅读: ${data}`);
       let dayread = JSON.parse(data);
       if (dayread.code == 0) {
-        tz += `【每日阅读】:获得${dayread.data.amount}金币\n`;
-        kz += `【每日阅读】:获得${dayread.data.amount}金币\n`;
+        tz += `【每日阅读???:获得${dayread.data.amount}金币\n`;
+        kz += `【每日阅读???:获得${dayread.data.amount}金币\n`;
       }
       resolve();
     });
@@ -212,15 +212,15 @@ function qqreadbox() {
       if (logs) $.log(`宝箱奖励: ${data}`);
       let box = JSON.parse(data);
       if (box.code == 0 && box.data.amount) {
-        tz += `【宝箱奖励${box.data.count}】:获得${box.data.amount}金币\n`;
-        kz += `【宝箱奖励${box.data.count}】:获得${box.data.amount}金币\n`;
+        tz += `【宝箱奖???${box.data.count}???:获得${box.data.amount}金币\n`;
+        kz += `【宝箱奖???${box.data.count}???:获得${box.data.amount}金币\n`;
       }
 
       resolve();
     });
   });
 }
-// 宝箱奖励翻倍
+// 宝箱奖励翻???
 function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
@@ -230,11 +230,11 @@ function qqreadbox2() {
       timeout: 60000,
     };
     $.get(toqqreadbox2url, (error, response, data) => {
-      if (logs) $.log(`宝箱奖励翻倍: ${data}`);
+      if (logs) $.log(`宝箱奖励翻???: ${data}`);
       let box2 = JSON.parse(data);
       if (box2.code == 0 && box2.data.amount) {
-        tz += `【宝箱翻倍】:获得${box2.data.amount}金币\n`;
-        kz += `【宝箱翻倍】:获得${box2.data.amount}金币\n`;
+        tz += `【宝箱翻倍???:获得${box2.data.amount}金币\n`;
+        kz += `【宝箱翻倍???:获得${box2.data.amount}金币\n`;
       }
       resolve();
     });

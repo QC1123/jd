@@ -15,7 +15,7 @@ let s_token, cookies, guid, lsid, lstoken, okl_token, token
   await getCookie();
 })()
     .catch((e) => {
-      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+      $.log('', `??? ${$.name}, 失败! 原因: ${e}!`, '')
     })
     .finally(() => {
       // $.done();
@@ -59,8 +59,8 @@ function generateQrcode() {
           const setCookie = resp.headers['set-cookie'][0];
           okl_token = setCookie.substring(setCookie.indexOf("=") + 1, setCookie.indexOf(";"))
           const url = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=' + token;
-          qrcode.generate(url, {small: true}); // 输出二维码
-          console.log("请打开 京东APP 扫码登录(二维码有效期为3分钟)");
+          qrcode.generate(url, {small: true}); // 输出二维???
+          console.log("请打开 京东APP 扫码登录(二维码有效期???3分钟)");
         }
       } catch (e) {
         $.logErr(e, resp)
@@ -118,9 +118,9 @@ function getCookie() {
       clearInterval($.timer);
       $.done();
     } else if (checkRes['errcode'] === 176) {
-      //未扫描登录
+      //未扫描登???
     } else {
-      $.log(`其他异常：${JSON.stringify(checkRes)}\n`);
+      $.log(`其他异常???${JSON.stringify(checkRes)}\n`);
       clearInterval($.timer);
       $.done();
     }
@@ -136,7 +136,7 @@ function formatCookie(headers) {
     const cookie1 = "pt_key=" + pt_key + ";pt_pin=" + pt_pin + ";";
 
     $.UserName = decodeURIComponent(cookie1.match(/pt_pin=(.+?);/) && cookie1.match(/pt_pin=(.+?);/)[1])
-    $.log(`京东用户：${$.UserName} Cookie获取成功(有效期：${headers['strict-transport-security'].substring("max-age=7776000".indexOf('=') + 1, "max-age=7776000".length)}秒)，cookie如下：`);
+    $.log(`京东用户???${$.UserName} Cookie获取成功(有效期：${headers['strict-transport-security'].substring("max-age=7776000".indexOf('=') + 1, "max-age=7776000".length)}???)，cookie如下：`);
     $.log(`\n${cookie1}\n`);
     resolve()
   })

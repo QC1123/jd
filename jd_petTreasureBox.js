@@ -1,10 +1,10 @@
 /*
 更新时间:2020-11-12
 从github@Zero-S1搬的[https://github.com/Zero-S1/JD_tools/blob/master/jbp.js]
-【宠汪汪聚宝盆辅助脚本】
+【宠汪汪聚宝盆辅助脚本???
 1、进入聚宝盆,显示本轮狗粮池投入总数,方便估算
-2、可能有两位数误差,影响不大
-3、聚宝盆最下方显示上轮前六名的投入狗粮，收入积分，以及纯收益（即：收入积分 - 投入狗粮）
+2、可能有两位数误???,影响不大
+3、聚宝盆最下方显示上轮前六名的投入狗粮，收入积分，以及纯收益（即：收入积分 - 投入狗粮???
 [MITM]
 hostname = jdjoy.jd.com,draw.jdfcloud.com
 
@@ -44,7 +44,7 @@ body["data"]["lastHourWinInfos"].unshift({
     'food': 0,
     'rank': 0,
     'foodDif': "",
-    'petCoin': '{投} [收入] (纯收入)',
+    'petCoin': '{投} [收入] (纯收???)',
     'userTag': "",
     'win': true
 })

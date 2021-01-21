@@ -8,58 +8,58 @@ const querystring = require("querystring");
 const $ = new Env();
 // =======================================微信server酱通知设置区域===========================================
 //此处填你申请的SCKEY.
-//(环境变量名 PUSH_KEY)
+//(环境变量??? PUSH_KEY)
 let SCKEY = '';
 
 
 // =======================================QQ酷推通知设置区域===========================================
 //此处填你申请的SKEY(具体详见文档 https://cp.xuthus.cc/)
-//(环境变量名 QQ_SKEY)
+//(环境变量??? QQ_SKEY)
 let QQ_SKEY = '';
 //此处填写私聊或群组推送，默认私聊(send[私聊]、group[群聊]、wx[个微]、ww[企微]、email[邮件])
 let QQ_MODE = 'send';
 
 // =======================================Bark App通知设置区域===========================================
-//此处填你BarkAPP的信息(IP/设备码，例如：https://api.day.app/XXXXXXXX)
+//此处填你BarkAPP的信???(IP/设备码，例如：https://api.day.app/XXXXXXXX)
 let BARK_PUSH = '';
-//BARK app推送铃声,铃声列表去APP查看复制填写
+//BARK app推送铃???,铃声列表去APP查看复制填写
 let BARK_SOUND = '';
 
 
 // =======================================telegram机器人通知设置区域===========================================
 //此处填你telegram bot 的Token，例如：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
-//(环境变量名 TG_BOT_TOKEN)
+//(环境变量??? TG_BOT_TOKEN)
 let TG_BOT_TOKEN = '';
 //此处填你接收通知消息的telegram用户的id，例如：129xxx206
-//(环境变量名 TG_USER_ID)
+//(环境变量??? TG_USER_ID)
 let TG_USER_ID = '';
 
 // =======================================钉钉机器人通知设置区域===========================================
 //此处填你钉钉 bot 的webhook，例如：5a544165465465645d0f31dca676e7bd07415asdasd
-//(环境变量名 DD_BOT_TOKEN)
+//(环境变量??? DD_BOT_TOKEN)
 let DD_BOT_TOKEN = '';
-//密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
+//密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符???
 let DD_BOT_SECRET = '';
 
 // =======================================企业微信机器人通知设置区域===========================================
 //此处填你企业微信机器人的 webhook(详见文档 https://work.weixin.qq.com/api/doc/90000/90136/91770)，例如：693a91f6-7xxx-4bc4-97a0-0ec2sifa5aaa
-//(环境变量名 QYWX_KEY)
+//(环境变量??? QYWX_KEY)
 let QYWX_KEY = '';
 
 // =======================================企业微信应用消息通知设置区域===========================================
-//此处填你企业微信应用消息的 值(详见文档 https://work.weixin.qq.com/api/doc/90000/90135/90236)，依次填上corpid的值,corpsecret的值,touser的值,agentid的值，素材库图片id（见https://github.com/LXK9301/jd_scripts/issues/519) 注意用,号隔开，例如：wwcff56746d9adwers,B-791548lnzXBE6_BWfxdf3kSTMJr9vFEPKAbh6WERQ,mingcheng,1000001,2COXgjH2UIfERF2zxrtUOKgQ9XklUqMdGSWLBoW_lSDAdafat
-//增加一个选择推送消息类型，用图文消息直接填写素材库图片id的值，用卡片消息就填写0(就是数字零)
-//(环境变量名 QYWX_AM)
+//此处填你企业微信应用消息??? ???(详见文档 https://work.weixin.qq.com/api/doc/90000/90135/90236)，依次填上corpid的???,corpsecret的???,touser的???,agentid的值，素材库图片id（见https://github.com/LXK9301/jd_scripts/issues/519) 注意???,号隔开，例如：wwcff56746d9adwers,B-791548lnzXBE6_BWfxdf3kSTMJr9vFEPKAbh6WERQ,mingcheng,1000001,2COXgjH2UIfERF2zxrtUOKgQ9XklUqMdGSWLBoW_lSDAdafat
+//增加一个选择推送消息类型，用图文消息直接填写素材库图片id的值，用卡片消息就填写0(就是数字???)
+//(环境变量??? QYWX_AM)
 let QYWX_AM = '';
 
 // =======================================iGot聚合推送通知设置区域===========================================
-//此处填您iGot的信息(推送key，例如：https://push.hellyw.com/XXXXXXXX)
+//此处填您iGot的信???(推送key，例如：https://push.hellyw.com/XXXXXXXX)
 let IGOT_PUSH_KEY = '';
 
 // =======================================push+设置区域=======================================
 //官方文档：https://pushplus.hxtrip.com/
-//PUSH_PLUS_TOKEN：微信扫码登录后一对一推送或一对多推送下面的token(您的Token)，不提供PUSH_PLUS_USER则默认为一对一推送
-//PUSH_PLUS_USER： 一对多推送的“群组编码”（一对多推送下面->您的群组(如无则新建)->群组编码，如果您是创建群组人。也需点击“查看二维码”扫描绑定，否则不能接受群组消息推送）
+//PUSH_PLUS_TOKEN：微信扫码登录后一对一推送或一对多推送下面的token(您的Token)，不提供PUSH_PLUS_USER则默认为一对一推???
+//PUSH_PLUS_USER??? 一对多推送的“群组编码”（一对多推送下???->您的群组(如无则新???)->群组编码，如果您是创建群组人。也需点击“查看二维码”扫描绑定，否则不能接受群组消息推送）
 let PUSH_PLUS_TOKEN = '';
 let PUSH_PLUS_USER = '';
 
@@ -89,7 +89,7 @@ if (process.env.BARK_PUSH) {
   }
 } else {
   if(BARK_PUSH && BARK_PUSH.indexOf('https') === -1 && BARK_PUSH.indexOf('http') === -1) {
-    //兼容BARK本地用户只填写设备码的情况
+    //兼容BARK本地用户只填写设备码的情???
     BARK_PUSH = `https://api.day.app/${BARK_PUSH}`
   }
 }
@@ -130,19 +130,19 @@ if (process.env.PUSH_PLUS_USER) {
 
 async function sendNotify(text, desp, params = {}) {
   //提供7种通知
-  desp += `\n本脚本开源免费使用 By：https://github.com/LXK9301/jd_scripts`;
+  desp += `\n本脚本开源免费使??? By：https://github.com/LXK9301/jd_scripts`;
   await Promise.all([
-    serverNotify(text, desp),//微信server酱
+    serverNotify(text, desp),//微信server???
     pushPlusNotify(text, desp)//pushplus(推送加)
   ])
   //由于上述两种微信通知需点击进去才能查看到详情，故text(标题内容)携带了账号序号以及昵称信息，方便不点击也可知道是哪个京东哪个活动
   text = text.match(/.*?(?=\s?-)/g) ? text.match(/.*?(?=\s?-)/g)[0] : text;
   await Promise.all([
     BarkNotify(text, desp, params),//iOS Bark APP
-    tgBotNotify(text, desp),//telegram 机器人
-    ddBotNotify(text, desp),//钉钉机器人
-    qywxBotNotify(text, desp), //企业微信机器人
-    qywxamNotify(text, desp), //企业微信应用消息推送
+    tgBotNotify(text, desp),//telegram 机器???
+    ddBotNotify(text, desp),//钉钉机器???
+    qywxBotNotify(text, desp), //企业微信机器???
+    qywxamNotify(text, desp), //企业微信应用消息推???
     iGotNotify(text, desp, params),//iGot
     CoolPush(text, desp)//QQ酷推
   ])
@@ -171,7 +171,7 @@ function serverNotify(text, desp, timeout = 2100) {
               if (data.errno === 0) {
                 console.log('server酱发送通知消息成功\n')
               } else if (data.errno === 1024) {
-                // 一分钟内发送相同的内容会触发
+                // 一分钟内发送相同的内容会触???
                 console.log(`server酱发送通知消息异常: ${data.errmsg}\n`)
               } else {
                 console.log(`server酱发送通知消息异常\n${JSON.stringify(data)}`)
@@ -201,11 +201,11 @@ function CoolPush(text, desp) {
         }
       }
 
-      // 已知敏感词
+      // 已知敏感???
       text = text.replace(/京豆/g, "豆豆");
       desp = desp.replace(/京豆/g, "");
       desp = desp.replace(/🐶/g, "");
-      desp = desp.replace(/红包/g, "H包");
+      desp = desp.replace(/红包/g, "H???");
 
       switch (QQ_MODE) {
         case "email":
@@ -223,7 +223,7 @@ function CoolPush(text, desp) {
           case "send":
             return "个人";
           case "group":
-            return "QQ群";
+            return "QQ???";
           case "wx":
             return "微信";
           case "ww":
@@ -238,18 +238,18 @@ function CoolPush(text, desp) {
       $.post(options, (err, resp, data) => {
         try {
           if (err) {
-            console.log(`发送${pushMode(QQ_MODE)}通知调用API失败！！\n`)
+            console.log(`发???${pushMode(QQ_MODE)}通知调用API失败！！\n`)
             console.log(err);
           } else {
             data = JSON.parse(data);
             if (data.code === 200) {
-              console.log(`酷推发送${pushMode(QQ_MODE)}通知消息成功\n`)
+              console.log(`酷推发???${pushMode(QQ_MODE)}通知消息成功\n`)
             } else if (data.code === 400) {
-              console.log(`QQ酷推(Cool Push)发送${pushMode(QQ_MODE)}推送失败：${data.msg}\n`)
+              console.log(`QQ酷推(Cool Push)发???${pushMode(QQ_MODE)}推送失败：${data.msg}\n`)
             } else if (data.code === 503) {
-              console.log(`QQ酷推出错，${data.message}：${data.data}\n`)
+              console.log(`QQ酷推出错???${data.message}???${data.data}\n`)
             }else{
-              console.log(`酷推推送异常: ${JSON.stringify(data)}`);
+              console.log(`酷推推送异???: ${JSON.stringify(data)}`);
             }
           }
         } catch (e) {
@@ -571,7 +571,7 @@ function iGotNotify(text, desp, params={}){
             if (data.ret === 0) {
               console.log('iGot发送通知消息成功\n')
             } else {
-              console.log(`iGot发送通知消息失败：${data.errMsg}\n`)
+              console.log(`iGot发送通知消息失败???${data.errMsg}\n`)
             }
           }
         } catch (e) {
@@ -607,14 +607,14 @@ function pushPlusNotify(text, desp) {
       $.post(options, (err, resp, data) => {
         try {
           if (err) {
-            console.log(`push+发送${PUSH_PLUS_USER ? '一对多' : '一对一'}通知消息失败！！\n`)
+            console.log(`push+发???${PUSH_PLUS_USER ? '一对多' : '一对一'}通知消息失败！！\n`)
             console.log(err);
           } else {
             data = JSON.parse(data);
             if (data.code === 200) {
-              console.log(`push+发送${PUSH_PLUS_USER ? '一对多' : '一对一'}通知消息完成。\n`)
+              console.log(`push+发???${PUSH_PLUS_USER ? '一对多' : '一对一'}通知消息完成。\n`)
             } else {
-              console.log(`push+发送${PUSH_PLUS_USER ? '一对多' : '一对一'}通知消息失败：${data.msg}\n`)
+              console.log(`push+发???${PUSH_PLUS_USER ? '一对多' : '一对一'}通知消息失败???${data.msg}\n`)
             }
           }
         } catch (e) {
