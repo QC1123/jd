@@ -79,6 +79,23 @@ else
     fi
 fi
 
+<<<<<<< HEAD
+=======
+
+
+echo "第6步删除不运行的脚本任务..."
+if [ $DO_NOT_RUN_SCRIPTS ]; then
+    echo "您配置了不运行的脚本：$DO_NOT_RUN_SCRIPTS"
+    arr=${DO_NOT_RUN_SCRIPTS//&/ }
+    for item in $arr; do
+        sed -ie '/'"${item}"'/d' /1.txt
+    done
+
+fi
+
+
+
+>>>>>>> upstream/master
 echo "第7步增加 |ts 任务日志输出时间戳..."
 sed -i "/\( ts\| |ts\|| ts\)/!s/>>/\|ts >>/g" $mergedListFile
 
