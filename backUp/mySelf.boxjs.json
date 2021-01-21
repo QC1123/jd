@@ -7,7 +7,7 @@
   "apps": [
     {
       "id": "QQ_READ",
-      "name": "企鹅阅读(QQ小程???)",
+      "name": "企鹅阅读(QQ小程序)",
       "keys": [
         "qqreadbodyVal",
         "qqreadtimeurl",

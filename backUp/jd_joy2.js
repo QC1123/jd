@@ -1,19 +1,19 @@
 /*
-jd宠汪�? 搬的https://github.com/uniqueque/QuantumultX/blob/4c1572d93d4d4f883f483f907120a75d925a693e/Script/jd_joy.js
-feedCount:自定??? 每次喂养数量; 等级只和喂养次数有关，与数量无关
-推荐每次投喂10个，积累狗粮，然后去聚宝盆赌每小时的幸运奖，据观察，投入3000-6000中奖概率大，超过7000基本上注定亏本，即使是第一???
+jd宠汪汪 搬的https://github.com/uniqueque/QuantumultX/blob/4c1572d93d4d4f883f483f907120a75d925a693e/Script/jd_joy.js
+feedCount:自定义 每次喂养数量; 等级只和喂养次数有关，与数量无关
+推荐每次投喂10个，积累狗粮，然后去聚宝盆赌每小时的幸运奖，据观察，投入3000-6000中奖概率大，超过7000基本上注定亏本，即使是第一名
 Combine from Zero-S1/JD_tools(https://github.com/Zero-S1/JD_tools)
 更新时间:2020-08-15
-注：如果使用Node.js, 需自行安装'crypto-js,got,http-server,tough-cookie'模块. ???: npm install crypto-js http-server tough-cookie got --save
+注：如果使用Node.js, 需自行安装'crypto-js,got,http-server,tough-cookie'模块. 例: npm install crypto-js http-server tough-cookie got --save
 */
 // quantumultx
 // [task_local]
-// #京东宠汪???
-// 15 1,2 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_joy.js, tag=京东宠汪???, img-url=https://raw.githubusercontent.com/znz1992/Gallery/master/jdww.png, enabled=true
+// #京东宠汪汪
+// 15 1,2 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_joy.js, tag=京东宠汪汪, img-url=https://raw.githubusercontent.com/znz1992/Gallery/master/jdww.png, enabled=true
 // Loon
 // [Script]
-// cron "15 1,2 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_joy.js,tag=京东宠汪???
-const name = '京东宠汪???';
+// cron "15 1,2 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_joy.js,tag=京东宠汪汪
+const name = '京东宠汪汪';
 const $ = new Env(name);
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -64,17 +64,17 @@ function* step() {
       } else {
         // console.log(`今天已关注或任务不存在`)
       }
-      //逛会???
+      //逛会场
       let scanMarketTask = petTaskConfig.datas.find(item => item.taskType === 'ScanMarket')
       if (scanMarketTask && scanMarketTask.taskStatus == 'processing' && scanMarketTask.taskChance > scanMarketTask.joinedCount) {
         for (let market of scanMarketTask.scanMarketList) {
           if (!market.status) {
             // 解决部分商品market.marketLink为空的时候，浏览不到的bug
             let clickResult = yield click(market.marketLinkH5)
-            console.log(`逛会场点???${market.marketName}结果${JSON.stringify(clickResult)}`)
+            console.log(`逛会场点击${market.marketName}结果${JSON.stringify(clickResult)}`)
 
             let scanMarketResult = yield ScanMarket(market.marketLinkH5)
-            console.log(`逛会???${market.marketName}结果${JSON.stringify(scanMarketResult)}`)
+            console.log(`逛会场${market.marketName}结果${JSON.stringify(scanMarketResult)}`)
           }
         }
       } else {
@@ -122,7 +122,7 @@ function* step() {
       let taskVideoRes = yield taskVideo();
       // console.log(`视频激--任务列表--${JSON.stringify(taskVideoRes)}`);
       // let sanVideoRes = yield sanVideo();
-      // console.log(`看视频激励结???--${JSON.stringify(sanVideoRes)}`);
+      // console.log(`看视频激励结果--${JSON.stringify(sanVideoRes)}`);
       if (taskVideoRes.success) {
         let taskArr = {};
         for (let item of taskVideoRes.datas) {
@@ -137,7 +137,7 @@ function* step() {
           for (let i = 0; i < new Array(taskArr.taskChance - joinedCount).fill('').length; i++) {
             console.log(`开始第${i+1}次看激励视频`);
             let sanVideoRes = yield sanVideo();
-            console.log(`看视频激励结???--${JSON.stringify(sanVideoRes)}`);
+            console.log(`看视频激励结果--${JSON.stringify(sanVideoRes)}`);
           }
         }
       }
@@ -216,19 +216,19 @@ function* step() {
         if (feedPetsResult.errorCode === 'feed_ok') {
           console.log('喂食成功')
         } else if (feedPetsResult.errorCode === 'time_error') {
-          console.log('喂食失败：正在食???')
+          console.log('喂食失败：正在食用')
         }
       }
-      // 喂养状???
+      // 喂养状态
       let enterRoomResult = yield enterRoom()
-      console.log(`喂养状???${JSON.stringify(enterRoomResult)}`)
+      console.log(`喂养状态${JSON.stringify(enterRoomResult)}`)
       message = `现有积分: ${enterRoomResult.data.petCoin}\n现有狗粮: ${enterRoomResult.data.petFood}\n喂养次数: ${enterRoomResult.data.feedCount}\n宠物等级: ${enterRoomResult.data.petLevel}`
-      subTitle = `【用户名???${enterRoomResult.data.pin}`
+      subTitle = `【用户名】${enterRoomResult.data.pin}`
     } else {
       console.log(`任务信息${JSON.stringify(petTaskConfig)}`)
       if (petTaskConfig.errorCode === 'B0001') {
-        $.setdata('', 'CookieJD');//cookie失效，故清空cookie???
-        $.msg(name, '【提示】京东cookie已失???,请重新登录获???', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+        $.setdata('', 'CookieJD');//cookie失效，故清空cookie。
+        $.msg(name, '【提示】京东cookie已失效,请重新登录获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
         if ($.isNode() && notify.SCKEY) {
           notify.sendNotify(`京东账号${UserName}cookie已失效`, '请重新登录获取cookie');
         }
@@ -239,7 +239,7 @@ function* step() {
       }
     }
   } else {
-    $.msg(name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获???', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
+    $.msg(name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
     $.done();
     return
   }
@@ -275,7 +275,7 @@ function followGood(sku) {
   requestPost(`https://jdjoy.jd.com/pet/followGood`, `sku=${sku}&reqSource=h5`)
 }
 
-//逛会???
+//逛会场
 function ScanMarket(marketLink,) {
   requestPost(`https://jdjoy.jd.com/pet/scan`, JSON.stringify({ marketLink: marketLink, taskType: 'ScanMarket', reqSource: 'h5' }), 'application/json')
 }
@@ -302,11 +302,11 @@ function feedPets() {
   request(`https://jdjoy.jd.com/pet/feed?feedCount=${FEED_NUM}`)
 }
 
-//喂养状???
+//喂养状态
 function enterRoom() {
   request(`https://jdjoy.jd.com/pet/enterRoom?reqSource=h5`)
 }
-//看激励视???
+//看激励视频
 function taskVideo() {
   const option =  {
     url: 'https://draw.jdfcloud.com//pet/getPetTaskConfig?reqSource=weapp',
@@ -326,7 +326,7 @@ function taskVideo() {
   $.get(option, (err, resp, data) => {
     try {
       if (err) {
-        console.log('\n京东宠汪???: API查询请求失败 ‼️‼️')
+        console.log('\n京东宠汪汪: API查询请求失败 ‼️‼️')
       } else {
         data = JSON.parse(data);
       }
@@ -391,7 +391,7 @@ function sanVideo() {
   $.post(option, (err, resp, data) => {
     try {
       if (err) {
-        console.log('\n京东宠汪???: API查询请求失败 ‼️‼️')
+        console.log('\n京东宠汪汪: API查询请求失败 ‼️‼️')
       } else {
         data = JSON.parse(data);
       }
@@ -426,7 +426,7 @@ function request(url) {
   $.get(option, (err, resp, data) => {
     try {
       if (err) {
-        console.log('\n京东宠汪???: API查询请求失败 ‼️‼️')
+        console.log('\n京东宠汪汪: API查询请求失败 ‼️‼️')
       } else {
         data = JSON.parse(data);
       }
@@ -436,8 +436,8 @@ function request(url) {
       sleep(data);
     }
     // if (err) {
-    //   console.log("\n京东宠汪???: API查询请求失败 ‼️‼️")
-    //   $.msg('京东宠汪???', `脚本执行中断`, `京东宠汪???: API查询请求失败 ‼️‼️`);
+    //   console.log("\n京东宠汪汪: API查询请求失败 ‼️‼️")
+    //   $.msg('京东宠汪汪', `脚本执行中断`, `京东宠汪汪: API查询请求失败 ‼️‼️`);
     //   $.done();
     // } else {
     //   try {
@@ -472,7 +472,7 @@ function requestPost(url, body, ContentType) {
   $.post(options, (err, resp, data) => {
     try {
       if (err) {
-        console.log('\n京东宠汪???: API查询请求失败 ‼️‼️')
+        console.log('\n京东宠汪汪: API查询请求失败 ‼️‼️')
       } else {
         data = JSON.parse(data);
       }
@@ -482,8 +482,8 @@ function requestPost(url, body, ContentType) {
       sleep(data);
     }
     // if (err) {
-    //   console.log("\n京东宠汪???: API查询请求失败 ‼️‼️")
-    //   $.msg('京东宠汪???', `${err.name}`, `京东宠汪???: API查询请求失败 ‼️‼️`);
+    //   console.log("\n京东宠汪汪: API查询请求失败 ‼️‼️")
+    //   $.msg('京东宠汪汪', `${err.name}`, `京东宠汪汪: API查询请求失败 ‼️‼️`);
     //   $.done();
     // } else {
     //   try {
@@ -498,7 +498,7 @@ function requestPost(url, body, ContentType) {
 }
 
 function sleep(response) {
-  console.log('休息一???');
+  console.log('休息一下');
   setTimeout(() => {
     console.log('休息结束');
     Task.next(response)

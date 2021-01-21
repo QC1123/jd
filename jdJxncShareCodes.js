@@ -8,8 +8,8 @@
 // 同一个京东账号的好友助力码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
 let JxncShareCodes = [
-  '',//账号一的好友shareCode,不同好友中间用@符号隔开
-  '',//账号二的好友shareCode，不同好友中间用@符号隔开
+  '9786652fec772cd9bfef720283da5d6a@a33ba3ef8101e556f7241db87950956b@ed2ff15b5d7d470e3536ba66de358e25@f4d37741ab68b11cf1d0f13608bc36a5@e4c0e3ce38afa95155026966d92986af',//账号一的好友shareCode,不同好友中间用@符号隔开
+  '9786652fec772cd9bfef720283da5d6a@a33ba3ef8101e556f7241db87950956b@ed2ff15b5d7d470e3536ba66de358e25@f4d37741ab68b11cf1d0f13608bc36a5@e4c0e3ce38afa95155026966d92986af',//账号二的好友shareCode，不同好友中间用@符号隔开
 ]
 // 判断github action里面是否有京喜农场助力码
 if (process.env.JXNC_SHARECODES) {

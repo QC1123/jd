@@ -7,7 +7,7 @@ const cookie = Key ? Key : $.getdata('CookieJD');
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 !(async () => {
   if (!cookie) {
-    $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获???', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+    $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
   await cash_sign();
@@ -22,7 +22,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
   // $.msg($.name, subTitle, message);
 })()
     .catch((e) => {
-      $.log('', `??? ${$.name}, 失败! 原因: ${e}!`, '')
+      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
     })
     .finally(() => {
       $.done();
@@ -59,7 +59,7 @@ function cash_sign() {
     })
   })
 }
-//做任???
+//做任务
 function cash_doTask(type, taskInfo) {
   const body = {
     'type': type,
@@ -85,7 +85,7 @@ function cash_doTask(type, taskInfo) {
     $.post(doTaskUrl, (err, resp, data) => {
       try {
         data = JSON.parse(data);
-        console.log(`做任???----data${JSON.stringify(data)}`)
+        console.log(`做任务----data${JSON.stringify(data)}`)
         // $.homePage = data;
       } catch (e) {
         $.logErr(e, resp);
@@ -147,10 +147,10 @@ function cash_homePage() {
 
 function msgShow() {
   if ($.data.data.bizCode === 0 && $.data.data.success === 'True' ) {
-    $.msg($.name, `今日签到${$.data.data.bizMsg}`, `【签到获得现金???${$.data.data.result.signCash}元\n【现有红包???${$.homePage.data.result.totalMoney}???${$.homePage.data.result.cashOutStatusTip}\\n`);
+    $.msg($.name, `今日签到${$.data.data.bizMsg}`, `【签到获得现金】${$.data.data.result.signCash}元\n【现有红包】${$.homePage.data.result.totalMoney}，${$.homePage.data.result.cashOutStatusTip}\\n`);
 
   } else {
-    $.msg($.name, '今日已签到，请明日再来哦', `【现有红包???${$.homePage.data.result.totalMoney}元，${$.homePage.data.result.cashOutStatusTip}\n`);
+    $.msg($.name, '今日已签到，请明日再来哦', `【现有红包】${$.homePage.data.result.totalMoney}元，${$.homePage.data.result.cashOutStatusTip}\n`);
   }
 }
 // function request(function_id, body = {}) {

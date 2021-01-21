@@ -7,12 +7,12 @@
   "apps": [
     {
       "id": "JD_Cookies",
-      "name": "京东多账??? Ck 管理",
+      "name": "京东多账号 Ck 管理",
       "keys": ["CookiesJD"],
       "descs_html": [
-        "请勿随意在输入框修改内容，建议通过脚本去获取cookie，若要修改，请按照JSON 格式修改???",
-        "脚本地址???<a href=\"https://raw.githubusercontent.com/LXK9301/jd_scripts/master/JD_extra_cookie.js\">京东??? CK获取</a>???,并按照此脚本注释进行配置",
-        "使用方式???<a href=\"https://home.m.jd.com/myJd/newhome.action\">个人中心</a>】获取对应的数据Code",
+        "请勿随意在输入框修改内容，建议通过脚本去获取cookie，若要修改，请按照JSON 格式修改。",
+        "脚本地址【<a href=\"https://raw.githubusercontent.com/LXK9301/jd_scripts/master/JD_extra_cookie.js\">京东多 CK获取</a>】,并按照此脚本注释进行配置",
+        "使用方式【<a href=\"https://home.m.jd.com/myJd/newhome.action\">个人中心</a>】获取对应的数据Code",
         "注：如与NobyDa的京东cookie重复，建议在此处删除重复的cookie"
       ],
       "settings": [
@@ -41,7 +41,7 @@
         "JDUA"
       ],
       "descs_html": [
-        "自行抓包京东APP获得，UserAgent类似下面???",
+        "自行抓包京东APP获得，UserAgent类似下面：",
         "jdapp;iPhone;9.3.0;14.2;88732f840b77821b345bf07fd71f609e6ff12f43;network/4g;ADID/0E38E9F1-4B4C-40A4-A479-DD15E58A5623;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone11,8;addressid/2005183373;supportBestPay/0;appBuild/167436;pushNoticeIsOpen/0;jdSupportDarkMode/0;pv/142.46;apprpd/CouponCenter;ref/NewCouponCenterViewController;psq/44;ads/;psn/88732f840b77821b345bf07fd71f609e6ff12f43|551;jdv/0|kong|t_1000170135|tuiguang|notset|1607732510603|1607732510;adk/;app_device/IOS;pap/JA2015_311210|9.2.5|IOS 14.2;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
       ],
       "settings": [
@@ -88,80 +88,80 @@
         },
         {
           "id": "jdFruitBeanCard",
-          "name": "使用水滴换豆???",
+          "name": "使用水滴换豆卡",
           "val": false,
           "type": "boolean",
-          "desc": "使用水滴换豆???(如果出现限时活动???100g水换20???,此时比浇水划???,推荐换豆)"
+          "desc": "使用水滴换豆卡(如果出现限时活动是100g水换20豆,此时比浇水划算,推荐换豆)"
         },
         {
           "id": "jd_fruit_name",
           "name": "京东账号一昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号昵称,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd_fruit1",
           "name": "账号一的互助码1",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd_fruit2",
           "name": "账号一的互助码2",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???."
+          "desc": "京东水果互助码."
         },
         {
           "id": "jd_fruit3",
           "name": "账号一的互助码3",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd_fruit4",
           "name": "账号一的互助码4",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_fruit_name",
-          "name": "京东账号二昵???",
+          "name": "京东账号二昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号昵称,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd2_fruit1",
-          "name": "账号二的互助???1",
+          "name": "账号二的互助码1",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_fruit2",
-          "name": "账号二的互助???2",
+          "name": "账号二的互助码2",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???."
+          "desc": "京东水果互助码."
         },
         {
           "id": "jd2_fruit3",
-          "name": "账号二的互助???3",
+          "name": "账号二的互助码3",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_fruit4",
-          "name": "账号二的互助???4",
+          "name": "账号二的互助码4",
           "val": "",
           "type": "text",
-          "desc": "京东水果互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         }
       ],
       "author": "@LXK9301",
@@ -202,84 +202,84 @@
           "name": "京东账号昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号昵称,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd_pet1",
-          "name": "互助???1",
+          "name": "互助码1",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd_pet2",
-          "name": "互助???2",
+          "name": "互助码2",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd_pet3",
-          "name": "互助???3",
+          "name": "互助码3",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd_pet4",
-          "name": "互助???4",
+          "name": "互助码4",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd_pet5",
-          "name": "互助???5",
+          "name": "互助码5",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_pet_name",
           "name": "京东账号2昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号2昵称,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号2昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd2_pet1",
           "name": "账号二互助码1",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_pet2",
           "name": "账号二互助码2",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_pet3",
           "name": "账号二互助码3",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_pet4",
           "name": "账号二互助码4",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
           "id": "jd2_pet5",
           "name": "账号二互助码5",
           "val": "",
           "type": "text",
-          "desc": "东东萌宠互助???.这是别人的shareCode,你帮别人助力."
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         }
       ],
       "author": "@LXK9301",
@@ -316,56 +316,56 @@
           "name": "京东账号一昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号昵称,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd_plantBean1",
-          "name": "京东账号一互助???1",
+          "name": "京东账号一互助码1",
           "val": "",
           "type": "text",
-          "desc": "种豆得豆互助???.这是别人的助力码,你帮别人助力."
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
         },
         {
           "id": "jd_plantBean2",
-          "name": "京东账号一互助???2",
+          "name": "京东账号一互助码2",
           "val": "",
           "type": "text",
-          "desc": "种豆得豆互助???.这是别人的助力码,你帮别人助力."
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
         },
         {
           "id": "jd_plantBean3",
-          "name": "京东账号一互助???3",
+          "name": "京东账号一互助码3",
           "val": "",
           "type": "text",
-          "desc": "种豆得豆互助???.这是别人的助力码,你帮别人助力."
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
         },
         {
           "id": "jd2_plant_bean_name",
-          "name": "京东账号二昵???",
+          "name": "京东账号二昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号二昵???,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号二昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd2_plantBean1",
           "name": "京东账号二互助码1",
           "val": "",
           "type": "text",
-          "desc": "种豆得豆互助???.这是别人的助力码,你帮别人助力."
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
         },
         {
           "id": "jd2_plantBean2",
           "name": "京东账号二互助码2",
           "val": "",
           "type": "text",
-          "desc": "种豆得豆互助???.这是别人的助力码,你帮别人助力."
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
         },
         {
           "id": "jd2_plantBean3",
           "name": "京东账号二互助码3",
           "val": "",
           "type": "text",
-          "desc": "种豆得豆互助???.这是别人的助力码,你帮别人助力."
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
         }
       ],
       "author": "@LXK9301",
@@ -378,7 +378,7 @@
     },
     {
       "id": "jd_Joy",
-      "name": "宠汪???",
+      "name": "宠汪汪",
       "keys": [],
       "settings": [
         {
@@ -386,51 +386,51 @@
           "name": "静默运行",
           "val": true,
           "type": "boolean",
-          "desc": "运行宠汪???(jd_joy.js)脚本时不发出系统弹窗通知"
+          "desc": "运行宠汪汪(jd_joy.js)脚本时不发出系统弹窗通知"
         },
         {
           "id": "jdJoyStealNotify",
           "name": "静默运行",
           "val": false,
           "type": "boolean",
-          "desc": "运行宠汪???(jd_joy_steal.js)脚本时不发出系统弹窗通知"
+          "desc": "运行宠汪汪(jd_joy_steal.js)脚本时不发出系统弹窗通知"
         },
         {
           "id": "jdJoyHelpFeed",
-          "name": "是否给好友喂???(默认不帮好友喂食)",
+          "name": "是否给好友喂食(默认不帮好友喂食)",
           "val": false,
           "type": "boolean",
-          "desc": "给好友喂食可得积分，但会消耗自己狗???"
+          "desc": "给好友喂食可得积分，但会消耗自己狗粮"
         },
         {
           "id": "jdJoyStealCoin",
-          "name": "是否偷好友积分与狗粮(默认???)",
+          "name": "是否偷好友积分与狗粮(默认是)",
           "val": true,
           "type": "boolean",
           "desc": "偷好友积分与狗粮"
         },
         {
           "id": "joyFeedCount",
-          "name": "每次喂养数量（默???10g???",
+          "name": "每次喂养数量（默认10g）",
           "val": "10",
           "type": "radios",
           "desc": "每次喂养狗粮克数(默认10g)",
           "items": [
             {
               "key": "10",
-              "label": "消???10g"
+              "label": "消耗10g"
             },
             {
               "key": "20",
-              "label": "消???20g"
+              "label": "消耗20g"
             },
             {
               "key": "40",
-              "label": "消???40g"
+              "label": "消耗40g"
             },
             {
               "key": "80",
-              "label": "消???80g"
+              "label": "消耗80g"
             }
           ]
         }
@@ -445,7 +445,7 @@
     },
     {
       "id": "jd_Joy_Reward",
-      "name": "宠汪汪积分兑换京???",
+      "name": "宠汪汪积分兑换京豆",
       "keys": [],
       "settings": [
         {
@@ -460,11 +460,11 @@
           "name": "是否兑换京豆",
           "val": "1",
           "type": "radios",
-          "desc": "默认开启兑换，如不想兑换可选择不兑???",
+          "desc": "默认开启兑换，如不想兑换可选择不兑换",
           "items": [
             {
               "key": "0",
-              "label": "不兑换奖???(选择此项将不兑换奖品)"
+              "label": "不兑换奖品(选择此项将不兑换奖品)"
             },
             {
               "key": "1",
@@ -501,63 +501,63 @@
         "jd2_joy_invite_pin",
         "jd2_joy_run_pin"
       ],
-      "desc": "宠汪汪的互助码friendPin是京东用户名,不是昵称(可在京东APP->我的->设置查看)。互助码之间用英文逗号隔开,下面给出具体示例,使用时可自行清空重新按格式填写你自己???",
+      "desc": "宠汪汪的互助码friendPin是京东用户名,不是昵称(可在京东APP->我的->设置查看)。互助码之间用英文逗号隔开,下面给出具体示例,使用时可自行清空重新按格式填写你自己的",
       "settings": [
         {
           "id": "joyRunFlag",
           "name": "是否参加赛跑(默认参加)",
           "val": true,
           "type": "boolean",
-          "desc": "开启脚本将会为您自动参加赛???(默认参加双人赛跑)"
+          "desc": "开启脚本将会为您自动参加赛跑(默认参加双人赛跑)"
         },
         {
           "id": "JOY_TEAM_LEVEL",
           "name": "宠汪汪赛跑级别选择",
           "val": "2",
           "type": "text",
-          "desc": "参加多少人的赛跑比赛，其???2代表参加双人PK赛，10代表参加10人突围赛???50代表参加50人挑战赛，多账号参加不同级别的赛跑用&符号隔开,例如2&10&50"
+          "desc": "参加多少人的赛跑比赛，其中2代表参加双人PK赛，10代表参加10人突围赛，50代表参加50人挑战赛，多账号参加不同级别的赛跑用&符号隔开,例如2&10&50"
         },
         {
           "id": "jd_joy_run_name",
           "name": "京东账号一昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号昵称,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd_joy_invite_pin",
           "name": "账号一邀请助力friendPin名单",
           "val": "jd_6cd93e613b0e5,被折叠的记忆33",
           "type": "text",
-          "desc": "多个账号使用英文逗号','隔开,最???3???"
+          "desc": "多个账号使用英文逗号','隔开,最多3个"
         },
         {
           "id": "jd_joy_run_pin",
           "name": "账号一赛跑助力friendPin名单",
           "val": "jd_6cd93e613b0e5,被折叠的记忆33",
           "type": "text",
-          "desc": "多个账号使用英文逗号','隔开,最???6???"
+          "desc": "多个账号使用英文逗号','隔开,最多6个"
         },
         {
           "id": "jd2_joy_run_name",
-          "name": "京东账号二昵???",
+          "name": "京东账号二昵称",
           "val": "",
           "type": "text",
-          "desc": "京东账号昵称,用于区分自己的京东账???(非必填，建议多个京东账号使用)"
+          "desc": "京东账号昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
         },
         {
           "id": "jd2_joy_invite_pin",
           "name": "账号二邀请助力friendPin名单",
           "val": "jd_6cd93e613b0e5,被折叠的记忆33",
           "type": "text",
-          "desc": "多个账号使用英文逗号','隔开,最???3???"
+          "desc": "多个账号使用英文逗号','隔开,最多3个"
         },
         {
           "id": "jd2_joy_run_pin",
           "name": "账号二赛跑助力friendPin名单",
           "val": "jd_6cd93e613b0e5,被折叠的记忆33",
           "type": "text",
-          "desc": "多个账号使用英文逗号','隔开,最???6???"
+          "desc": "多个账号使用英文逗号','隔开,最多6个"
         }
       ],
       "author": "@LXK9301",
@@ -570,7 +570,7 @@
     },
     {
       "id": "jd_MoneyTree",
-      "name": "京东摇钱???",
+      "name": "京东摇钱树",
       "keys": [],
       "settings": [
         {
@@ -585,7 +585,7 @@
           "name": "是否卖出金果获得金币",
           "val": false,
           "type": "boolean",
-          "desc": "是否卖出金果获得金币,金币具有有效期，默认不卖???"
+          "desc": "是否卖出金果获得金币,金币具有有效期，默认不卖出"
         }
       ],
       "author": "@LXK9301",
@@ -598,7 +598,7 @@
     },
     {
       "id": "jd_Speed",
-      "name": "京东天天加???",
+      "name": "京东天天加速",
       "keys": [],
       "settings": [
         {
@@ -619,7 +619,7 @@
     },
     {
       "id": "jdUnsubscribe",
-      "name": "取关京东店铺和商???",
+      "name": "取关京东店铺和商品",
       "keys": [
         "jdUnsubscribeStopGoods",
         "jdUnsubscribeStopShop"
@@ -637,28 +637,28 @@
           "name": "取消已关注商品的数量",
           "val": 10,
           "type": "number",
-          "desc": "运行一次脚本取消多少个已关注的商品（默???10???,输入0表示不取关）"
+          "desc": "运行一次脚本取消多少个已关注的商品（默认10个,输入0表示不取关）"
         },
         {
           "id": "jdUnsubscribeShopPageSize",
           "name": "取消已关注店铺的数量",
           "val": 10,
           "type": "number",
-          "desc": "运行一次脚本取消多少个已关注的店铺（默???10???,输入0表示不取关）"
+          "desc": "运行一次脚本取消多少个已关注的店铺（默认10个,输入0表示不取关）"
         },
         {
           "id": "jdUnsubscribeStopGoods",
-          "name": "遇到此商品不再进行取???",
+          "name": "遇到此商品不再进行取关",
           "val": "",
           "type": "text",
-          "desc": "匹配到此处商品后???(包括此商???)不再进行取关(此处内容需去商品详情页长按（自营处）文字拷贝商品信???)"
+          "desc": "匹配到此处商品后面(包括此商品)不再进行取关(此处内容需去商品详情页长按（自营处）文字拷贝商品信息)"
         },
         {
           "id": "jdUnsubscribeStopShop",
-          "name": "遇到此店铺不再进行取???",
+          "name": "遇到此店铺不再进行取关",
           "val": "",
           "type": "text",
-          "desc": "匹配到此处店铺后???(包括此店???)的不再进行取???(此处内容请尽量从头开始输入店铺名???)"
+          "desc": "匹配到此处店铺后面(包括此店铺)的不再进行取关(此处内容请尽量从头开始输入店铺名称)"
         }
       ],
       "author": "@LXK9301",
@@ -671,7 +671,7 @@
     },
     {
       "id": "jd_unbind",
-      "name": "注销京东会员???",
+      "name": "注销京东会员卡",
       "keys": [
         "UN_BIND_CARD_NUM",
         "UN_BIND_STOP_CARD"
@@ -689,11 +689,11 @@
           "name": "注销京东店铺会员卡的数量",
           "val": 200,
           "type": "number",
-          "desc": "运行一次脚本注销多少个店铺会员卡（默???200???,输入0表示不注销会员卡）"
+          "desc": "运行一次脚本注销多少个店铺会员卡（默认200个,输入0表示不注销会员卡）"
         },
         {
           "id": "UN_BIND_STOP_CARD",
-          "name": "注销京东店铺会员???(白名???)",
+          "name": "注销京东店铺会员卡(白名单)",
           "val": "",
           "type": "text",
           "desc": "不想注销的店铺会员卡名称"
@@ -724,14 +724,14 @@
           "name": "自动升级(商品/货架)",
           "val": true,
           "type": "boolean",
-          "desc": "自动升级,顺序:解锁升级商品、升级货???"
+          "desc": "自动升级,顺序:解锁升级商品、升级货架"
         },
         {
           "id": "jdBusinessCircleJump",
           "name": "自动更换商圈",
           "val": true,
           "type": "boolean",
-          "desc": "小于对方300热力值自动更换商圈队???"
+          "desc": "小于对方300热力值自动更换商圈队伍"
         },
         {
           "id": "jdSuperMarketLottery",
@@ -760,7 +760,7 @@
       "keys": [
         "coinToBeans"
       ],
-      "desc": "默认不兑换奖???,例如:兑换20京豆输入20,兑换1000京豆输入1000,兑换 柠檬果香洗手液， 输入 柠檬果香洗手液。其他详细的奖品名称去东东超市活动页面查???",
+      "desc": "默认不兑换奖品,例如:兑换20京豆输入20,兑换1000京豆输入1000,兑换 柠檬果香洗手液， 输入 柠檬果香洗手液。其他详细的奖品名称去东东超市活动页面查看",
       "settings": [
         {
           "id": "jdSuperMarketRewardNotify",
@@ -771,10 +771,10 @@
         },
         {
           "id": "coinToBeans",
-          "name": "兑换奖品（默认不兑换???",
+          "name": "兑换奖品（默认不兑换）",
           "val": "0",
           "type": "text",
-          "desc": "输入兑换奖品名称(默认不兑换奖???)"
+          "desc": "输入兑换奖品名称(默认不兑换奖品)"
         }
       ],
       "author": "@LXK9301",
@@ -809,7 +809,7 @@
         },
         {
           "id": "githubUser",
-          "name": "github 用户???",
+          "name": "github 用户名",
           "val": "",
           "type": "text",
           "desc": "例如：LXK9301"
@@ -823,7 +823,7 @@
         },
         {
           "id": "TRIGGER_KEYWORDS",
-          "name": "触发关键???",
+          "name": "触发关键词",
           "val": "",
           "type": "text",
           "desc": ".github/workflows/路径里面yml文件repository_dispatch项目的types值，例如jd_fruit.yml里面的值为fruit,多个使用英文逗号','隔开"
@@ -855,17 +855,17 @@
         },
         {
           "id": "xmMinStep",
-          "name": "最小运动步???",
+          "name": "最小运动步数",
           "val": "19000",
           "type": "text",
-          "desc": "需要修改最小的运动步数的数???,例如:19000"
+          "desc": "需要修改最小的运动步数的数字,例如:19000"
         },
         {
           "id": "xmMaxStep",
-          "name": "最大运动步???",
+          "name": "最大运动步数",
           "val": "25000",
           "type": "text",
-          "desc": "需要修改最小的运动步数的数???,例如:25000"
+          "desc": "需要修改最小的运动步数的数字,例如:25000"
         }
       ],
       "author": "@LXK9301",
