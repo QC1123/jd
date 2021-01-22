@@ -7,8 +7,8 @@
 // 同一个京东账号的好友互助码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
 let shareCodes = [
-  '8xiUadjzs_KbIuVygTqkDg==@Q3G7yKihFtskVqxkDs4Eiw==@k4KqkxwwBXhrxXq6-13dqQ==@ImRebJq_57-RN3IgPi9m_A==@geWiRnjBuaYU1FTPo9qHWQ==@EBKF96NEIjafPXEj156fVA==@4J64q0wPBO9KYK3SrFOu9Q==@M7RAgr_EtABMv4X65FO4ig==',//账号一的好友shareCode,不同好友中间用@符号隔开
-  '8xiUadjzs_KbIuVygTqkDg==@Q3G7yKihFtskVqxkDs4Eiw==@k4KqkxwwBXhrxXq6-13dqQ==@ImRebJq_57-RN3IgPi9m_A==@geWiRnjBuaYU1FTPo9qHWQ==@EBKF96NEIjafPXEj156fVA==@4J64q0wPBO9KYK3SrFOu9Q==@M7RAgr_EtABMv4X65FO4ig==',//账号二的好友shareCode，不同好友中间用@符号隔开
+  '8xiUadjzs_KbIuVygTqkDg==@Q3G7yKihFtskVqxkDs4Eiw==@k4KqkxwwBXhrxXq6-13dqQ==@ImRebJq_57-RN3IgPi9m_A==@bGZyuA43q56Dx1ZTB1v1Wgi_GsDPku1qLBCaBDw3mXA=@geWiRnjBuaYU1FTPo9qHWQ==@EBKF96NEIjafPXEj156fVA==@4J64q0wPBO9KYK3SrFOu9Q==@M7RAgr_EtABMv4X65FO4ig==',//账号一的好友shareCode,不同好友中间用@符号隔开
+  '8xiUadjzs_KbIuVygTqkDg==@Q3G7yKihFtskVqxkDs4Eiw==@k4KqkxwwBXhrxXq6-13dqQ==@ImRebJq_57-RN3IgPi9m_A==@bGZyuA43q56Dx1ZTB1v1Wgi_GsDPku1qLBCaBDw3mXA=@geWiRnjBuaYU1FTPo9qHWQ==@EBKF96NEIjafPXEj156fVA==@4J64q0wPBO9KYK3SrFOu9Q==@M7RAgr_EtABMv4X65FO4ig==',//账号二的好友shareCode，不同好友中间用@符号隔开
 ]
 // 判断github action里面是否有京喜工厂互助码
 if (process.env.DREAM_FACTORY_SHARE_CODES) {
