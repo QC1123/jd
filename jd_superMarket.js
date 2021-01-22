@@ -39,9 +39,9 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
   //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaejjYv4g8T2EwnsVhQ',
+  'eEJkN73xJQ@Z82F_DkR3yquebt2cjc@eU9YaOqxYPojpWiEzXZB1Q@9o-dtE8fsnSV@9o6TtGsTsVaSJPttHv2UAgk4@eU9Ya760N_sho23TnidA0g@f0JzNb3sJaRjrw@eU9YaOnkMqog8z_SzHNB1g@eU9YG6_QOKp7iRaclAlG',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'aURoM7PtY_Q@eU9Ya-y2N_5z9DvXwyIV0A@eU9YaOnjYK4j-GvWmXIWhA',
+  'eEJkN73xJQ@Z82F_DkR3yquebt2cjc@eU9YaOqxYPojpWiEzXZB1Q@9o-dtE8fsnSV@9o6TtGsTsVaSJPttHv2UAgk4@eU9Ya760N_sho23TnidA0g@f0JzNb3sJaRjrw@eU9YaOnkMqog8z_SzHNB1g@eU9YG6_QOKp7iRaclAlG',
 ]
 
 !(async () => {
