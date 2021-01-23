@@ -45,7 +45,7 @@ let currentCookie = ''; // 当前用户 cookie
 let tokenNull = {'farm_jstoken': '', 'phoneid': '', 'timestamp': ''}; // 内置一份空的 token
 let tokenArr = []; // 用户 token 数组
 let currentToken = {}; // 当前用户 token
-let shareCode = '9786652fec772cd9bfef720283da5d6a@a33ba3ef8101e556f7241db87950956b@6c9d286d927fc6bc05a3a9252bb6c5f2@963c8c8ee63345960f33886d76929eb4@c53b3557ef2623c060bb29656d25a5f9@b1dfbb6c8d353ef815b0cd1b38e0c8a3@ed2ff15b5d7d470e3536ba66de358e25@f4d37741ab68b11cf1d0f13608bc36a5@e4c0e3ce38afa95155026966d92986af'; // 内置助力码
+let shareCode = '{"smp":"9786652fec772cd9bfef720283da5d6a","active":"jdnc_1_chelizi210108_2","joinnum":1}@{"smp":"***33b***3ef8101e556f7241db87950956b","***ctive":"jdnc_1_btor***nge210113_2","joinnum":1}@{"smp":"6c9d286d927fc6bc05a3a9252bb6c5f2","active":"jdnc_1_chelizi210108_2","joinnum":1}@{"smp":"963c8c8ee63345960f33886d76929eb4","active":"jdnc_1_chelizi210108_2","joinnum":1}@{"smp":"c53b3557ef2623c060bb29656d25a5f9","active":"jdnc_1_suli210113_2","joinnum":1}@{"smp":"b1dfbb6c8d353ef815b0cd1b38e0c8a3","active":"jdnc_1_shanzhatiao210113_2","joinnum":1}@{"smp":"afe66d2e0cf58a181473a122dee7d92e","active":"jdnc_1_guaziren210115_2","joinnum":1}@{"smp":"f4d37741ab68b11cf1d0f13608bc36a5","active":"jdnc_1_chelizi210101_2","joinnum":1}'; // 内置助力码
 let jxncShareCodeArr = []; // 用户 助力码 数组
 let currentShareCode = []; // 当前用户 要助力的助力码
 const openUrl = `openjd://virtual?params=${encodeURIComponent('{ "category": "jump", "des": "m", "url": "https://wqsh.jd.com/sns/201912/12/jxnc/detail.html?ptag=7155.9.32&smp=b47f4790d7b2a024e75279f55f6249b9&active=jdnc_1_chelizi1205_2"}',)}`; // 打开京喜农场
