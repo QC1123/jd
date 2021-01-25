@@ -50,8 +50,8 @@ const inviteCodes = [
   `cgxZdDjRf-uZqUKFawD4juwn6wbTMpI@cgxZa7cwtG95U9hBgNAKVuLL9qvCj6bVLNFoagHLJ4OXBc7WZl84@cgxZdTXtILzZ7AjMXAP46RwDOXnr04fu2OK6qadhKZKFEq-PqeFNE5XNP9Q@cgxZ-vUo_Bl3PoZ6REnKvoV23OQ2fIBHYoQh@cgxZ-vQm_D17PaR93ZAROuGyAH94KTDjfLrvzpxI_5_9M-rFb8vZAGSYowDqDX50@cgxZdTXtI-jcuwnOWgavusWH_p3CHh0lYhBKunmfczB0cWNCSZCEsn6iUi4@cgxZczjGfeuEqVaMVknljFEc40bAC_-qM-bAPlKO@cgxZdTXtIL-MvljPClSu6EFYVzoxq2DpsvRkeZlFMZP5emzkiv6juYaPMHM@cgxZdTXtU_m4tFiUcH3gsNZWk5oVClunQhZrDbXC0DMjykp3SwtwXfc`
 ];
 const pkInviteCodes = [
-  'IgNWdiLGaPadvlqJQnnKp27-YpAvKvSYNTSkTGvZylf_0wcvqD9EMkohEd8@IgNWdiLGaPaZskfACQyhgLSpZWps-WtQEW3McifV@IgNWdiLGaPaAvmHPAQf769XqjJjMyRirPzN9-AS-WHY9Y_G7t9Cwe5gdiI2qEvHZ',
-  'IgNWdiLGaPadvlqJQnnKp27-YpAvKvSYNTSkTGvZylf_0wcvqD9EMkohEd8@IgNWdiLGaPaZskfACQyhgLSpZWps-WtQEW3McifV@IgNWdiLGaPaAvmHPAQf769XqjJjMyRirPzN9-AS-WHY9Y_G7t9Cwe5gdiI2qEvHZ'
+  'IgNWdiLGaPaBs12SWUbqgMsfmexKnlUjLulgqPC7',
+  'IgNWdiLGaPaBs12SWUbqgMsfmexKnlUjLulgqPC7'
 ]
 !(async () => {
   await requireConfig();
