@@ -46,8 +46,13 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const inviteCodes = [
+<<<<<<< HEAD
   `S5aQgG09atg@S-ivB0Mu6TIJfqM9XLbM@S5KkcRBga81LSdBylkvJYdw@Sa2nZmL20Idxk@Sa2jXmJm4Iv5j9Y9MQXmNoL7-@S4qQ3GU9HtgySfg@S5KkcRBtPoQLRIkvzk_dYdA@S5KkcN117qwKKWGK9y41f`,
   `S5aQgG09atg@S-ivB0Mu6TIJfqM9XLbM@S5KkcRBga81LSdBylkvJYdw@Sa2nZmL20Idxk@Sa2jXmJm4Iv5j9Y9MQXmNoL7-@S4qQ3GU9HtgySfg@S5KkcRBtPoQLRIkvzk_dYdA@S5KkcN117qwKKWGK9y41f`
+=======
+  `ATGEC3-fsrn13aiaEqiM@AUWE5maSSnzFeDmH4iH0elA@ATGEC3-fsrn13aiaEqiM@AUWE5m6WUmDdZC2mr1XhJlQ@AUWE5m_jEzjJZDTKr3nwfkg@A06fNSRc4GIqY38pMBeLKQE2InZA@AUWE5mf7ExDZdDmH7j3wfkA@AUWE5m6jBy2cNAWX7j31Pxw@AUWE5mK2UnDddDTX61S1Mkw@AUWE5mavGyGZdWzP5iCoZwQ`,
+  `ATGEC3-fsrn13aiaEqiM@AUWE5maSSnzFeDmH4iH0elA@ATGEC3-fsrn13aiaEqiM@AUWE5m6WUmDdZC2mr1XhJlQ@AUWE5m_jEzjJZDTKr3nwfkg@A06fNSRc4GIqY38pMBeLKQE2InZA@AUWE5m6_BmTUPAGH42SpOkg@AUWE53NTIs3V8YBqthQMI@AUWE5m6yVxTJcWjWr3nRIlw`
+>>>>>>> upstream/master
 ]
 !(async () => {
   $.tuanList = []
@@ -203,14 +208,15 @@ function getUserTuanInfo() {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            if (!data.data.canStartNewAssist)
+            if (data.data && !data.data.canStartNewAssist) {
               $.tuan = {
                 "activityIdEncrypted": data.data.id,
                 "assistStartRecordId": data.data.assistStartRecordId,
                 "assistedPinEncrypted": data.data.encPin,
                 "channel": "FISSION_BEAN"
               }
-            $.tuanActId = data.data.id
+              $.tuanActId = data.data.id
+            }
           }
         }
       } catch (e) {
@@ -260,7 +266,7 @@ function getUserInfo() {
             if (data.data.shareTaskRes) {
               console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${data.data.shareTaskRes.itemId}\n`);
             } else {
-              console.log(`已满5人助力,暂时看不到您的${$.name}好友助力码`)
+              console.log(`\n\n已满5人助力或助力功能已下线,故暂时无${$.name}好友助力码\n\n`)
             }
           }
         }
