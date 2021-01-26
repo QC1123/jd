@@ -31,11 +31,6 @@ let shareCodes = [ // 这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
   '96cadc24677b452abf157c51cfb1376a@02f8e4e9947746cea7b57f0f02068f82@b74b0d1a1ff74966994d3c9a6eb1bef2@63e2663045994a62b2ff1fc13f8a45c3@809e185f1db1416194f416381bb4fb4f@8ac8ccc95a2a44bab39e393ab23286b3@131adcf7cc59470e9a2bbdf7ebc7cedc@6cc1f00d3df34d49a50a0fffa15b86bf@964765d091634c699247597f1ce199fe',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-<<<<<<< HEAD
-  '96cadc24677b452abf157c51cfb1376a@02f8e4e9947746cea7b57f0f02068f82@b74b0d1a1ff74966994d3c9a6eb1bef2@63e2663045994a62b2ff1fc13f8a45c3@809e185f1db1416194f416381bb4fb4f@8ac8ccc95a2a44bab39e393ab23286b3@131adcf7cc59470e9a2bbdf7ebc7cedc@6cc1f00d3df34d49a50a0fffa15b86bf@964765d091634c699247597f1ce199fe',
-=======
-  'b1638a774d054a05a30a17d3b4d364b8@f92cb56c6a1349f5a35f0372aa041ea0@9c52670d52ad4e1a812f894563c746ea@8175509d82504e96828afc8b1bbb9cb3@2673c3777d4443829b2a635059953a28@d2d5d435675544679413cb9145577e0f',
->>>>>>> upstream/master
 ]
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = 100;//保留水滴大于多少g,默认100g;
