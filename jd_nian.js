@@ -9,17 +9,17 @@
 ============Quantumultx===============
 [task_local]
 #京东炸年兽🧨
-0 9,12,20 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js, tag=京东炸年兽🧨, img-url=https://raw.githubusercontent.com/yogayyy/Scripts/main/Icon/lxk0301/jd_nian.png, enabled=true
+0 9,12,20,21 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js, tag=京东炸年兽🧨, img-url=https://raw.githubusercontent.com/yogayyy/Scripts/main/Icon/lxk0301/jd_nian.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "0 9,12,20 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js,tag=京东炸年兽🧨
+cron "0 9,12,20,21 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js,tag=京东炸年兽🧨
 
 ===============Surge=================
-京东炸年兽🧨 = type=cron,cronexp="0 9,12,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
+京东炸年兽🧨 = type=cron,cronexp="0 9,12,20,21 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
 
 ============小火箭=========
-京东炸年兽🧨 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js, cronexpr="0 9,12,20 * * *", timeout=3600, enable=true
+京东炸年兽🧨 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js, cronexpr="0 9,12,20,21 * * *", timeout=3600, enable=true
  */
 const $ = new Env('京东炸年兽🧨');
 
@@ -50,8 +50,13 @@ const inviteCodes = [
   `cgxZdDjRf-uZqUKFawD4juwn6wbTMpI@cgxZa7cwtG95U9hBgNAKVuLL9qvCj6bVLNFoagHLJ4OXBc7WZl84@cgxZdTXtILzZ7AjMXAP46RwDOXnr04fu2OK6qadhKZKFEq-PqeFNE5XNP9Q@cgxZ-vUo_Bl3PoZ6REnKvoV23OQ2fIBHYoQh@cgxZ-vQm_D17PaR93ZAROuGyAH94KTDjfLrvzpxI_5_9M-rFb8vZAGSYowDqDX50@cgxZdTXtI-jcuwnOWgavusWH_p3CHh0lYhBKunmfczB0cWNCSZCEsn6iUi4@cgxZczjGfeuEqVaMVknljFEc40bAC_-qM-bAPlKO@cgxZdTXtIL-MvljPClSu6EFYVzoxq2DpsvRkeZlFMZP5emzkiv6juYaPMHM@cgxZdTXtU_m4tFiUcH3gsNZWk5oVClunQhZrDbXC0DMjykp3SwtwXfc`
 ];
 const pkInviteCodes = [
+<<<<<<< HEAD
   'IgNWdiLGaPaBs12SWUbqgMsfmexKnlUjLulgqPC7@IgNWdiLGaPaBs12SWUbqgMsfmfPFf56nzhP6bHprtMNOUgiFaQ@IgNWdiLGaPaBs12SWUbqgMsfme1Hogp0bqwq4aa4RnxwoD5OQJQ6@IgNWdiLGaPaBs12SWUbqgMsfme1Hogkga_sr46C9ES8syEy_Yu2H',
   'IgNWdiLGaPaBs12SWUbqgMsfmexKnlUjLulgqPC7@IgNWdiLGaPaBs12SWUbqgMsfmfPFf56nzhP6bHprtMNOUgiFaQ@IgNWdiLGaPaBs12SWUbqgMsfme1Hogp0bqwq4aa4RnxwoD5OQJQ6@IgNWdiLGaPaBs12SWUbqgMsfme1Hogkga_sr46C9ES8syEy_Yu2H'
+=======
+  'IgNWdiLGaPadvlqJQnnKp27-YpAvKvSYNTSkTGvZylf_0wcvqD9EMkohEdw@IgNWdiLGaPaZskfACQyhgLSpZWps-WtQEW3McifW@IgNWdiLGaPYCeJUfsq18UNi5ln9xEZSPRdOue8Wl3hJTS2SQzU0vulL0fHeULJaIfgqHFd7f_Kg',
+  'IgNWdiLGaPadvlqJQnnKp27-YpAvKvSYNTSkTGvZylf_0wcvqD9EMkohEdw@IgNWdiLGaPaAvmHPAQf769XqjJjMyRirPzN9-AS-WHY9Y_G7t9Cwe5gdiI2qEvHa@IgNWdiLGaPYCeJUfsq18UNi5ln9xEZSPRdOue8Wl3hLRjZBAJLHzBpcl18AeskNYctp-8Q@IgNWdiLGaPYCeJUfsq18UNi5ln9xEZSPRdOue8Wl3hLRjZBCduDyApZxg5BPuhRfnJvQvQ'
+>>>>>>> upstream/master
 ]
 !(async () => {
   await requireConfig();
@@ -107,6 +112,7 @@ async function jdNian() {
       $.hasGroup = false
       await pkTaskStealDetail()
       if ($.hasGroup) await pkInfo()
+      await helpFriendsPK()
     }
     await $.wait(2000)
     await killCouponList()
@@ -1079,7 +1085,7 @@ function readShareCodePk() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://jd.turinglabs.net/api/v2/jd/nian_pk/read/${randomCount}/`,
+      url: `http://jd.turinglabs.net/api/v2/jd/nian/read/${randomCount}/`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
@@ -1135,7 +1141,13 @@ function shareCodesFormatPk() {
       const tempIndex = $.index > pkInviteCodes.length ? (pkInviteCodes.length - 1) : ($.index - 1);
       $.newShareCodesPk = pkInviteCodes[tempIndex].split('@');
     }
+<<<<<<< HEAD
     const readShareCodeRes = await readShareCodePk();
+=======
+    let readShareCodeRes = null
+    if (new Date().getUTCHours() >= 12)
+      readShareCodeRes = await readShareCodePk();
+>>>>>>> upstream/master
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodesPk = [...new Set([...$.newShareCodesPk, ...(readShareCodeRes.data || [])])];
     }
