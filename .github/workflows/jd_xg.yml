@@ -50,3 +50,5 @@ jobs:
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+          PAT: ${{ secrets.PAT }}
+          github_token: ${{ secrets.PAT }}
