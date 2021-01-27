@@ -36,8 +36,8 @@ let cookiesArr = [], cookie = '', message;
 const randomCount = $.isNode() ? 20 : 5;
 
 const inviteCodes = [
-  ``,
-  ``,
+  `BYN0xoml0yHr8FpNKP7riA`,
+  `BYN0xoml0yHr8FpNKP7riA`,
 ];
 
 if ($.isNode()) {
