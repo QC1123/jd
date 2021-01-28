@@ -6,7 +6,7 @@ name: 京东神仙书院答题
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 * * * *' #20 * * * *
+    - cron: '60 * * * *' #60 * * * *
   watch:
     types: started
   repository_dispatch:
