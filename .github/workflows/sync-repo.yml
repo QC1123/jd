@@ -23,7 +23,7 @@ jobs:
         if: env.PAT
         with:
           github_token: ${{ secrets.PAT }}
-          source_repo: "https://${{ secrets.PAT }}@github.com/kkcao/jd.git"
+          source_repo: "https://github.com/kkcao/test.git"
           source_branch: "master"
           destination_branch: "master"
 
