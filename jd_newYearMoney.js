@@ -48,8 +48,8 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const inviteCodes = [
-  ``,
-  ``,
+  `octiALcL48cbT-J9e_xx-Zsax2ptRjvejXRf`,
+  `octiALcL48cbT-J9e_xx-Zsax2ptRjvejXRf`,
 ];
 !(async () => {
   await requireConfig();
