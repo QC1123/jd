@@ -13,7 +13,9 @@ if ($.isNode()) {
  * mc 萌宠
  * dd 东东工厂
  * jx 京喜工厂
-
+ * cash 签到领现金
+ * year 压岁钱
+ * nian 年兽
 
  */
 const shareCodes = [
@@ -25,7 +27,9 @@ const shareCodes = [
     dd: 'T0105aQgG09atgCjVWnYaS5kRrbA',
     jx: '8xiUadjzs_KbIuVygTqkDg==',
     zz: 'S5aQgG09atg',
-
+    cash: 'eEJkN73xJQ',
+    year: 'octiALcL48cbT-J9e_xx-Zsax2ZvTDHYinVe',
+		nian: 'cgxZdDjRf-uZqUKFawD4juwn6wbTMpI',
   },
   // yh
   {
@@ -35,6 +39,9 @@ const shareCodes = [
     dd: 'T0225KkcRBga81LSdBylkvJYdwCjVWnYaS5kRrbA',
     jx: 'k4KqkxwwBXhrxXq6-13dqQ==',
     zz: 'S5KkcRBga81LSdBylkvJYdw',
+    cash: 'eU9YaOqxYPojpWiEzXZB1Q',
+    year: 'oMZeX-BLpo1SV-RgMbUi_C62WDebLS0iTWH_66ZTSs56aCIw',
+    nian: 'cgxZdTXtILzZ7AjMXAP46RwDOXnr04fu2OK6qadhKZKFEq-PqeFNE5XNP9Q',
   },
   // 悠哉
   {
@@ -44,6 +51,8 @@ const shareCodes = [
     dd: 'T019-ivB0Mu6TIJfqM9XLbMCjVWnYaS5kRrbA',
     jx: 'Q3G7yKihFtskVqxkDs4Eiw==',
     zz: 'S-ivB0Mu6TIJfqM9XLbM',
+    cash: 'Z82F_DkR3yquebt2cjc',
+    nian: 'cgxZa7cwtG95U9hBgNAKVuLL9qvCj6bVLNFoagHLJ4OXBc7WZl84',
   },
   // 正阳
   {
@@ -53,6 +62,9 @@ const shareCodes = [
     dd: 'T012a2nZmL20IdxkCjVWnYaS5kRrbA',
     jx: 'ImRebJq_57-RN3IgPi9m_A==',
     zz: 'Sa2nZmL20Idxk',
+    cash: '9o-dtE8fsnSV',
+    year: 'Lwabg0XldAPkT659N_w8sym2Pg4EOMAmq_VEaOQ',
+    nian: 'cgxZ-vUo_Bl3PoZ6REnKvoV23OQ2fIBHYoQh',
   },
   // luccy
   {
@@ -62,6 +74,8 @@ const shareCodes = [
     dd: 'P04z54XCjVWnYaS5uCdrLh_fKvgIXjDJ9xTJ0cnmA',
     jx: 'bGZyuA43q56Dx1ZTB1v1Wgi_GsDPku1qLBCaBDw3mXA=',
     zz: 'Sa2jXmJm4Iv5j9Y9MQXmNoL7-',
+    cash: '9o6TtGsTsVaSJPttHv2UAgk4',
+    nian: 'cgxZ-vQm_D17PaR93ZAROuGyAH94KTDjfLrvzpxI_5_9M-rFb8vZAGSYowDqDX50',
   },
   // 俊辰
   {
@@ -70,7 +84,9 @@ const shareCodes = [
     mc: 'MTE1NDAxNzgwMDAwMDAwNDA1MjY2OTc=',
     dd: 'P04z54XCjVWnYaS5m9cZ2eq2y1NkoUO7Kq5iIM',
     jx: 'geWiRnjBuaYU1FTPo9qHWQ==',
-    
+    cash: 'eU9Ya760N_sho23TnidA0g',
+    year: 'oMZeXLRO8YxQUeE3YuQj-4HakEwHFjtCmbHdvpwI-mlwNRVC',
+    nian: 'cgxZdTXtI-jcuwnOWgavusWH_p3CHh0lYhBKunmfczB0cWNCSZCEsn6iUi4',
   },
   // skylee1
   {
@@ -80,6 +96,9 @@ const shareCodes = [
     dd: 'T0144qQ3GU9HtgySfgCjVWnYaS5kRrbA',
     jx: '4J64q0wPBO9KYK3SrFOu9Q==',
     zz: 'S4qQ3GU9HtgySfg',
+    cash: 'f0JzNb3sJaRjrw',
+    year: 'pst1ArcW49MSXa59e7A8s1siZMVONvYYO-HT553c',
+    nian: 'cgxZczjGfeuEqVaMVknljFEc40bAC_-qM-bAPlKO',
     },
   // skylee2
   {
@@ -89,6 +108,9 @@ const shareCodes = [
     dd: 'T0225KkcRBtPoQLRIkvzk_dYdACjVWnYaS5kRrbA',
     jx: 'M7RAgr_EtABMv4X65FO4ig=='
     zz: 'S5KkcRBtPoQLRIkvzk_dYdA',
+    cash: 'eU9YaOnkMqog8z_SzHNB1g',
+    year: 'oMZeX-Me9N1RAbM2MLAi_-tTNPZgycIfPmkVJB7vQUBQ1RiQ',
+    nian: 'cgxZdTXtIL-MvljPClSu6EFYVzoxq2DpsvRkeZlFMZP5emzkiv6juYaPMHM',
   },
   // skylee3
   {
@@ -98,6 +120,8 @@ const shareCodes = [
     nc: '131adcf7cc59470e9a2bbdf7ebc7cedc',
     jx: 'EBKF96NEIjafPXEj156fVA==',
     zz: 'S5KkcN117qwKKWGK9y41f',
+    cash: 'eU9YG6_QOKp7iRaclAlG',
+    nian: 'cgxZdTXtU_m4tFiUcH3gsNZWk5oVClunQhZrDbXC0DMjykp3SwtwXfc',
   },
 ];
 $.result = []
@@ -105,12 +129,15 @@ $.result = []
 !(async () => {
   for (let i = 0; i < shareCodes.length; i++) {
     const {zd, nc, mc, dd, jx, zz} = shareCodes[i];
-    zd && await createZd(`http://api.turinglabs.net/api/v1/jd/bean/create/${zd}/`)
-    nc && await createNc(`http://api.turinglabs.net/api/v1/jd/farm/create/${nc}/`)
-    mc && await createMc(`http://api.turinglabs.net/api/v1/jd/pet/create/${mc}/`)
-    dd && await createDd(`http://api.turinglabs.net/api/v1/jd/ddfactory/create/${dd}/`)
-    jx && await createJx(`http://api.turinglabs.net/api/v1/jd/jxfactory/create/${jx}/`)
+    zd && await createZd(`http://jd.turinglabs.net/api/v2/jd/bean/create/${zd}/`)
+    nc && await createNc(`http://jd.turinglabs.net/api/v2/jd/farm/create/${nc}/`)
+    mc && await createMc(`http://jd.turinglabs.net/api/v2/jd/pet/create/${mc}/`)
+    dd && await createDd(`http://jd.turinglabs.net/api/v2/jd/ddfactory/create/${dd}/`)
+    jx && await createJx(`http://jd.turinglabs.net/api/v2/jd/jxfactory/create/${jx}/`)
     zz && await createZz(`https://code.chiang.fun/api/v1/jd/jdzz/create/${zz}/`)
+    cash && await createZz(`https://code.chiang.fun/api/v1/jd/jdcash/create/${cash}/`)
+    year && await createZz(`https://code.chiang.fun/api/v1/jd/year/create/${year}/`)
+    nian && await createZz(`https://code.chiang.fun/api/v1/jd/jdnian/create/${year}/`)
   }
   await showMsg()
 })()
