@@ -106,7 +106,7 @@ const shareCodes = [
     nc: '964765d091634c699247597f1ce199fe',
     mc: 'MTAxODc2NTEzMzAwMDAwMDAxNDcyMDE2NQ==',
     dd: 'T0225KkcRBtPoQLRIkvzk_dYdACjVWnYaS5kRrbA',
-    jx: 'M7RAgr_EtABMv4X65FO4ig=='
+    jx: 'M7RAgr_EtABMv4X65FO4ig==',
     zz: 'S5KkcRBtPoQLRIkvzk_dYdA',
     cash: 'eU9YaOnkMqog8z_SzHNB1g',
     year: 'oMZeX-Me9N1RAbM2MLAi_-tTNPZgycIfPmkVJB7vQUBQ1RiQ',
@@ -137,7 +137,7 @@ $.result = []
     zz && await createZz(`https://code.chiang.fun/api/v1/jd/jdzz/create/${zz}/`)
     cash && await createZz(`https://code.chiang.fun/api/v1/jd/jdcash/create/${cash}/`)
     year && await createZz(`https://code.chiang.fun/api/v1/jd/year/create/${year}/`)
-    nian && await createZz(`https://code.chiang.fun/api/v1/jd/jdnian/create/${year}/`)
+    nian && await createZz(`https://code.chiang.fun/api/v1/jd/jdnian/create/${nian}/`)
   }
   await showMsg()
 })()
