@@ -26,10 +26,10 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-let helpAuthor = true;
+//let helpAuthor = true;
 const inviteCodes = [
-  `-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaO7jMvwh-W_VzyUX0Q@eU9YaurkY69zoj3UniVAgg@eU9YaOnjYK4j-GvWmXIWhA`,
-  `-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaO7jMvwh-W_VzyUX0Q@eU9YaurkY69zoj3UniVAgg@eU9YaOnjYK4j-GvWmXIWhA`
+  `eEJkN73xJQ@Z82F_DkR3yquebt2cjc@eU9YaOqxYPojpWiEzXZB1Q@9o-dtE8fsnSV@9o6TtGsTsVaSJPttHv2UAgk4@eU9Ya760N_sho23TnidA0g@f0JzNb3sJaRjrw@eU9YaOnkMqog8z_SzHNB1g@eU9YG6_QOKp7iRaclAlG`,
+  `eEJkN73xJQ@Z82F_DkR3yquebt2cjc@eU9YaOqxYPojpWiEzXZB1Q@9o-dtE8fsnSV@9o6TtGsTsVaSJPttHv2UAgk4@eU9Ya760N_sho23TnidA0g@f0JzNb3sJaRjrw@eU9YaOnkMqog8z_SzHNB1g@eU9YG6_QOKp7iRaclAlG`
 ]
 const randomCount = $.isNode() ? 20 : 5;
 if ($.isNode()) {
