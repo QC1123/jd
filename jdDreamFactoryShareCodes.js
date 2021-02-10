@@ -10,6 +10,13 @@ let shareCodes = [
   '8xiUadjzs_KbIuVygTqkDg==@Q3G7yKihFtskVqxkDs4Eiw==@k4KqkxwwBXhrxXq6-13dqQ==@ImRebJq_57-RN3IgPi9m_A==@bGZyuA43q56Dx1ZTB1v1Wgi_GsDPku1qLBCaBDw3mXA=@geWiRnjBuaYU1FTPo9qHWQ==@EBKF96NEIjafPXEj156fVA==@4J64q0wPBO9KYK3SrFOu9Q==@M7RAgr_EtABMv4X65FO4ig==',//账号一的好友shareCode,不同好友中间用@符号隔开
   '8xiUadjzs_KbIuVygTqkDg==@Q3G7yKihFtskVqxkDs4Eiw==@k4KqkxwwBXhrxXq6-13dqQ==@ImRebJq_57-RN3IgPi9m_A==@bGZyuA43q56Dx1ZTB1v1Wgi_GsDPku1qLBCaBDw3mXA=@geWiRnjBuaYU1FTPo9qHWQ==@EBKF96NEIjafPXEj156fVA==@4J64q0wPBO9KYK3SrFOu9Q==@M7RAgr_EtABMv4X65FO4ig==',//账号二的好友shareCode，不同好友中间用@符号隔开
 ]
+
+// 从日志获取互助码
+const logShareCodes = require('./utils/jdShareCodes');
+if (logShareCodes.DREAM_FACTORY_SHARE_CODES.length > 0 && !process.env.DREAM_FACTORY_SHARE_CODES) {
+  process.env.DREAM_FACTORY_SHARE_CODES = logShareCodes.DREAM_FACTORY_SHARE_CODES.join('&');
+}
+
 // 判断github action里面是否有京喜工厂互助码
 if (process.env.DREAM_FACTORY_SHARE_CODES) {
   if (process.env.DREAM_FACTORY_SHARE_CODES.indexOf('&') > -1) {

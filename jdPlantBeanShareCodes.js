@@ -10,6 +10,13 @@ let PlantBeanShareCodes = [
   'ybvc7vkuuqg3q3tc2h5pwmkfyi@haofcpgvxtwwoksczndwypn7d7qcxytdwhsfwpa@e7lhibzb3zek2o3osubib6jnwdifwbxlqmpzu7y@awus372yrusdniyfhgunn4m554@oss2ycictwzowutap6w6fvllhfnzpbfw4uapnvi@4npkonnsy7xi2shhdpwzao2adev6aemttkh3coq@53c3u54x45cxpg6jra5vmwmmyq@e7lhibzb3zek33girhyhdliwt5fg7y7coc6fbcq@66nvo67oyxpyce6odctijj3nrhl5wdost2w3fry',//账号一的好友shareCode,不同好友中间用@符号隔开
   'ybvc7vkuuqg3q3tc2h5pwmkfyi@haofcpgvxtwwoksczndwypn7d7qcxytdwhsfwpa@e7lhibzb3zek2o3osubib6jnwdifwbxlqmpzu7y@awus372yrusdniyfhgunn4m554@oss2ycictwzowutap6w6fvllhfnzpbfw4uapnvi@4npkonnsy7xi2shhdpwzao2adev6aemttkh3coq@53c3u54x45cxpg6jra5vmwmmyq@e7lhibzb3zek33girhyhdliwt5fg7y7coc6fbcq@66nvo67oyxpyce6odctijj3nrhl5wdost2w3fry',//账号二的好友shareCode，不同好友中间用@符号隔开
 ]
+
+// 从日志获取互助码
+const logShareCodes = require('./utils/jdShareCodes');
+if (logShareCodes.PLANT_BEAN_SHARECODES.length > 0 && !process.env.PLANT_BEAN_SHARECODES) {
+  process.env.PLANT_BEAN_SHARECODES = logShareCodes.PLANT_BEAN_SHARECODES.join('&');
+}
+
 // 判断github action里面是否有种豆得豆互助码
 if (process.env.PLANT_BEAN_SHARECODES) {
   if (process.env.PLANT_BEAN_SHARECODES.indexOf('&') > -1) {

@@ -10,6 +10,13 @@ let FruitShareCodes = [
   '96cadc24677b452abf157c51cfb1376a@02f8e4e9947746cea7b57f0f02068f82@b74b0d1a1ff74966994d3c9a6eb1bef2@63e2663045994a62b2ff1fc13f8a45c3@809e185f1db1416194f416381bb4fb4f@8ac8ccc95a2a44bab39e393ab23286b3@131adcf7cc59470e9a2bbdf7ebc7cedc@6cc1f00d3df34d49a50a0fffa15b86bf@964765d091634c699247597f1ce199fe',//账号一的好友shareCode,不同好友中间用@符号隔开
   '96cadc24677b452abf157c51cfb1376a@02f8e4e9947746cea7b57f0f02068f82@b74b0d1a1ff74966994d3c9a6eb1bef2@63e2663045994a62b2ff1fc13f8a45c3@809e185f1db1416194f416381bb4fb4f@8ac8ccc95a2a44bab39e393ab23286b3@131adcf7cc59470e9a2bbdf7ebc7cedc@6cc1f00d3df34d49a50a0fffa15b86bf@964765d091634c699247597f1ce199fe',//账号二的好友shareCode，不同好友中间用@符号隔开
 ]
+
+// 从日志获取互助码
+const logShareCodes = require('./utils/jdShareCodes');
+if (logShareCodes.FRUITSHARECODES.length > 0 && !process.env.FRUITSHARECODES) {
+  process.env.FRUITSHARECODES = logShareCodes.FRUITSHARECODES.join('&');
+}
+
 // 判断github action里面是否有东东农场互助码
 if (process.env.FRUITSHARECODES) {
   if (process.env.FRUITSHARECODES.indexOf('&') > -1) {
