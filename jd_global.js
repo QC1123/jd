@@ -50,8 +50,8 @@ if ($.isNode()) {
 
 const JD_API_HOST = 'https://api.m.jd.com/', actCode = 'visa-card-001';
 const inviteCodes = [
-  'L0JxNVNBRXFtOXVMY3hzUld3aC9rUT09',
-  'L0JxNVNBRXFtOXVMY3hzUld3aC9rUT09',
+  'L0JxNVNBRXFtOXVMY3hzUld3aC9rUT09@Q0FKbFVhOWswbloyc1BQL2hDZkkwdz09@VkplSkFxUEd2dXlmNFV3czVZVDZyZUo0R0VQVCtOMy8zbnUwTmlpZk4vOD0=@SzRpaCsxSEtGaXBXY2VLb2NnREJpdndwMnZJQ0ZNenBTRkZlWkx5eXpMWT0=@c2FSSlhFSDlFT1A2MkVMa2Rkd0Y2UkUwZkZoSWdNK0NBaEJLcVdSeFFBbz0=@bzkxUW1FNkxET2xQUHhNVklUWml3Zz09',
+  'L0JxNVNBRXFtOXVMY3hzUld3aC9rUT09@Q0FKbFVhOWswbloyc1BQL2hDZkkwdz09@VkplSkFxUEd2dXlmNFV3czVZVDZyZUo0R0VQVCtOMy8zbnUwTmlpZk4vOD0=@SzRpaCsxSEtGaXBXY2VLb2NnREJpdndwMnZJQ0ZNenBTRkZlWkx5eXpMWT0=@c2FSSlhFSDlFT1A2MkVMa2Rkd0Y2UkUwZkZoSWdNK0NBaEJLcVdSeFFBbz0=@bzkxUW1FNkxET2xQUHhNVklUWml3Zz09',
 ];
 $.invites = [];
 !(async () => {
