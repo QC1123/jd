@@ -244,11 +244,9 @@ function taskList() {
                 } else {
                   switch (vo.taskType) {
                     case 2: // 
-                    	for (await $.wait(1000);//延迟等待一秒
-                      }
+                    await $.wait(1000);//延迟等待一秒
                     case 6: // 浏览商品任务
-                    	for (await $.wait(1000);//延迟等待一秒
-                      }
+                    await $.wait(1000);//延迟等待一秒
                     case 9: // 开宝箱
                       for (let i = vo.completedTimes; i <= vo.configTargetTimes; ++i) {
                         console.log(`去做任务：${vo.taskName}`)
