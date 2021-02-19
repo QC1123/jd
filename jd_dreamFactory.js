@@ -117,17 +117,27 @@ if ($.isNode()) {
 
 async function jdDreamFactory() {
   await userInfo();
+  await $.wait(1000);
   await QueryFriendList();//查询今日招工情况以及剩余助力次数
+  await $.wait(1000);
   await joinLeaderTuan();//参团
+  await $.wait(1000);
   await helpFriends();
   if (!$.unActive) return
   await getUserElectricity();
+  await $.wait(1000);
   await taskList();
+  await $.wait(1000);
   await investElectric();
+  await $.wait(1000);
   await QueryHireReward();//收取招工电力
+  await $.wait(1000);
   await PickUp();//收取自家的地下零件
+  await $.wait(1000);
   await stealFriend();
+  await $.wait(1000);
   await tuanActivity();
+  await $.wait(1000);
   await QueryAllTuan();
   await exchangeProNotify();
   await showMsg();
@@ -233,8 +243,12 @@ function taskList() {
                   await $.wait(1000);//延迟等待一秒
                 } else {
                   switch (vo.taskType) {
-                    case 2: // 逛一逛任务
+                    case 2: // 
+                    	for (await $.wait(1000);//延迟等待一秒
+                      }
                     case 6: // 浏览商品任务
+                    	for (await $.wait(1000);//延迟等待一秒
+                      }
                     case 9: // 开宝箱
                       for (let i = vo.completedTimes; i <= vo.configTargetTimes; ++i) {
                         console.log(`去做任务：${vo.taskName}`)
