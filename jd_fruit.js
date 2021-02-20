@@ -1,12 +1,12 @@
 /*
 东东水果:脚本更新地址 https://gitee.com/lxk0301/jd_scripts/raw/master/jd_fruit.js
-更新时间：2021-1-9
+更新时间：2021-2-19
 活动入口：京东APP我的-更多工具-东东农场
 东东农场活动链接：https://h5.m.jd.com/babelDiy/Zeus/3KSjXqQabiTuD1cJ28QskrpWoBKT/index.html
 已支持IOS双京东账号,Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 互助码shareCode请先手动运行脚本查看打印可看到
-一天只能帮助4个人。多出的助力码无效
+一天只能帮助3个人。多出的助力码无效
 ==========================Quantumultx=========================
 [task_local]
 #jd免费水果
@@ -25,13 +25,14 @@ jd免费水果 搬的https://github.com/liuxiaoyucc/jd-helper/blob/a6f275d978574
 */
 const $ = new Env('东东农场');
 let cookiesArr = [], cookie = '', jdFruitShareArr = [], isBox = false, notify, newShareCodes;
-//助力好友分享码(最多4个,否则后面的助力失败),原因:京东农场每人每天只有四次助力机会
+//助力好友分享码(最多3个,否则后面的助力失败),原因:京东农场每人每天只有3次助力机会
 //此此内容是IOS用户下载脚本到本地使用，填写互助码的地方，同一京东账号的好友互助码请使用@符号隔开。
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // 这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
   '96cadc24677b452abf157c51cfb1376a@02f8e4e9947746cea7b57f0f02068f82@b74b0d1a1ff74966994d3c9a6eb1bef2@63e2663045994a62b2ff1fc13f8a45c3@809e185f1db1416194f416381bb4fb4f@8ac8ccc95a2a44bab39e393ab23286b3@131adcf7cc59470e9a2bbdf7ebc7cedc@6cc1f00d3df34d49a50a0fffa15b86bf@964765d091634c699247597f1ce199fe',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
+  '96cadc24677b452abf157c51cfb1376a@02f8e4e9947746cea7b57f0f02068f82@b74b0d1a1ff74966994d3c9a6eb1bef2@63e2663045994a62b2ff1fc13f8a45c3@809e185f1db1416194f416381bb4fb4f@8ac8ccc95a2a44bab39e393ab23286b3@131adcf7cc59470e9a2bbdf7ebc7cedc@6cc1f00d3df34d49a50a0fffa15b86bf@964765d091634c699247597f1ce199fe',
 ]
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = 100;//保留水滴大于多少g,默认100g;
@@ -614,7 +615,7 @@ async function getExtraAward() {
 async function masterHelpShare() {
   console.log('开始助力好友')
   let salveHelpAddWater = 0;
-  let remainTimes = 4;//今日剩余助力次数,默认4次（京东农场每人每天4次助力机会）。
+  let remainTimes = 3;//今日剩余助力次数,默认3次（京东农场每人每天3次助力机会）。
   let helpSuccessPeoples = '';//成功助力好友
   console.log(`格式化后的助力码::${JSON.stringify(newShareCodes)}\n`);
 
