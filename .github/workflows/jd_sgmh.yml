@@ -6,7 +6,7 @@ name: 闪购盲盒
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' #20 8 * * *
+    - cron: '27 0 * * *' #27 0 * * *
   watch:
     types: started
   repository_dispatch:

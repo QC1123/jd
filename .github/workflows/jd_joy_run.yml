@@ -6,7 +6,7 @@ name: 宠汪汪赛跑
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '10 1-11/2 * * *'
   watch:
     types: started
   repository_dispatch:
