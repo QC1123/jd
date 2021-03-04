@@ -39,7 +39,6 @@ jobs:
       - name: '运行 【极速版签到+赚现金】'
         run: |
           node jd_speed_sign.js
-          node jd_speed_redpocke.js
           
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
